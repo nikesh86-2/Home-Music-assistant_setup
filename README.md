@@ -25,6 +25,7 @@ Home Assistant Secrets: Create config/secrets.yaml to store your specific integr
 3. Deploy
 Bash
 docker compose up -d
+
 💡 Key Technical Features
 Modular Configuration
 Instead of a monolithic configuration.yaml, this setup utilizes modular includes to keep the codebase clean. I separate concerns into logical files:
