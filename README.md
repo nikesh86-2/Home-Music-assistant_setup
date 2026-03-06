@@ -23,7 +23,7 @@ System Variables: Copy .env.example to .env and update PUID, PGID.
 
 Secrets: Create config/secrets.yaml for sensitive credentials.
 
-###3. Deploy
+### 3. Deploy
 
 docker compose up -d
 
