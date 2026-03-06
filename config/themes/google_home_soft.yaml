@@ -1,0 +1,36 @@
+Google Home Soft:
+  # Background
+  primary-background-color: "#F7F7F7"
+  card-background-color: "#FFFFFF"
+  secondary-background-color: "#F0F0F0"
+
+  # Text
+  primary-text-color: "#202124"
+  secondary-text-color: "#5F6368"
+
+  # Accents
+  primary-color: "#4285F4"     # Google blue
+  accent-color: "#34A853"      # Google green
+  label-badge-background-color: "#FFFFFF"
+
+  # Cards
+  ha-card-border-radius: "18px"
+  ha-card-box-shadow: "0 4px 12px rgba(0, 0, 0, 0.05)"
+  ha-card-border-width: "0"
+  ha-card-padding: "16px"
+
+  # Buttons and toggles
+  toggle-button-color: "#4285F4"
+  switch-checked-color: "#4285F4"
+  switch-unchecked-button-color: "#BDBDBD"
+
+  # Sidebar
+  sidebar-background-color: "#FFFFFF"
+  sidebar-selected-background-color: "#E8F0FE"
+  sidebar-selected-icon-color: "#4285F4"
+  sidebar-selected-text-color: "#202124"
+  sidebar-text-color: "#5F6368"
+
+  # Header
+  app-header-background-color: "#FFFFFF"
+  app-header-text-color: "#202124"

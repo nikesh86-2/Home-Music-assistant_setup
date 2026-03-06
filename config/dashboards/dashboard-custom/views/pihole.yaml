@@ -1,0 +1,187 @@
+# Pi-hole Dashboard
+title: Pi-Hole
+path: pihole
+theme: "Google Home Dark"
+background: black
+
+cards:
+  # --- Back Button ---
+  - type: custom:button-card
+    icon: mdi:arrow-left
+    show_name: false
+    styles:
+      card:
+        - width: 36px
+        - height: 36px
+        - border-radius: 50%
+        - margin: 4px
+        - background: rgba(45,45,50,0.9)
+    tap_action:
+      action: navigate
+      navigation_path: /dashboard-custom/home
+
+  - type: vertical-stack
+    cards:
+
+      # ─── Header: logo + title ─────────────────────────────
+      - type: horizontal-stack
+        cards:
+          - type: picture
+            image: https://upload.wikimedia.org/wikipedia/commons/0/00/Pi-hole_Logo.png
+            tap_action:
+              action: none
+            hold_action:
+              action: none
+            aspect_ratio: 1/1
+            card_mod:
+              style: |
+                ha-card {
+                  background: transparent !important;
+                  box-shadow: none !important;
+                  border: none !important;
+                  margin: 0 !important;
+                  padding: 0 !important;
+                  align-self: start !important;
+                }
+                img {
+                  border-radius: 10%;
+                  width: 42px !important;
+                  height: 42px !important;
+                  box-shadow: 0 0 8px rgba(66,133,244,0.25),
+                              0 0 4px rgba(0,0,0,0.4);
+                  background: rgba(255,255,255,0.05);
+                  padding: 4px;
+                }
+
+          - type: custom:mushroom-title-card
+            title: Pi-hole Dashboard
+            subtitle: Network Ad Blocking Overview
+            card_mod:
+              style: |
+                ha-card {
+                  background: transparent !important;
+                  box-shadow: none !important;
+                  border: none !important;
+                  margin: 0 !important;
+                  padding: 0 !important;
+                  text-align: right !important;
+                  width: 100% !important;
+                  align-self: start !important;
+                }
+                h1 { margin: 0 !important; }
+                h2 { margin: 0 !important; opacity: 0.7 !important; }
+
+      # ─── DNS Activity & Ads Blocked Graph ─────────────────
+      - type: custom:mini-graph-card
+        name: DNS Activity (Last 24h)
+        icon: mdi:dns
+        hours_to_show: 24
+        points_per_hour: 2
+        line_width: 3
+        animate: true
+        show:
+          fill: fade
+          icon: true
+          name: true
+          legend: true
+          state: true
+        entities:
+          - entity: sensor.pi_hole_dns_queries_frequency
+            name: DNS Queries
+            color: '#4285F4'
+            show_state: true
+          - entity: sensor.pi_hole_ads_blocked_today
+            name: Ads Blocked
+            color: '#EA4335'
+            show_state: true
+            y_axis: secondary
+        card_mod:
+          style: |
+            ha-card {
+              margin-top: 2px !important;
+              margin-bottom: 2px !important;
+              padding: 0 !important;
+              background: transparent !important;
+            }
+
+      # ─── Ads Blocked % Sparkline ──────────────────────────
+      - type: custom:mini-graph-card
+        name: Ads Blocked (%)
+        icon: mdi:percent
+        hours_to_show: 24
+        points_per_hour: 1
+        line_width: 4
+        animate: true
+        show:
+          icon: true
+          name: true
+          state: true
+        entities:
+          - entity: sensor.pi_hole_ads_percentage_blocked_today
+            name: Block Rate
+            color: '#FBBC05'
+        card_mod:
+          style: |
+            ha-card {
+              margin-top: 2px !important;
+              margin-bottom: 2px !important;
+              padding: 0 !important;
+              background: transparent !important;
+            }
+
+      # ─── Domains on Blocklist (text) ──────────────────────
+      - type: custom:mushroom-entity-card
+        entity: sensor.pi_hole_domains_blocked
+        icon: mdi:block-helper
+        name: Domains on Blocklist
+        layout: horizontal
+        icon_color: '#4285F4'
+        card_mod:
+          style: |
+            ha-card {
+              margin-top: 2px !important;
+              margin-bottom: 2px !important;
+              padding: 0 !important;
+            }
+        # ─── Power Toggle Button ──────────────────────────────
+      - type: custom:mushroom-template-card
+        entity: switch.pi_hole
+        primary: >
+           {{ 'Pi-hole Enabled' if is_state('switch.pi_hole', 'on') else 'Pi-hole Disabled' }}
+        secondary: >
+          {{ 'Protecting your network from ads' if is_state('switch.pi_hole', 'on') else 'Click to re-enable protection' }}
+        icon: >
+          {{ 'mdi:power' if is_state('switch.pi_hole', 'on') else 'mdi:power-off' }}
+        icon_color: >
+          {{ 'green' if is_state('switch.pi_hole', 'on') else 'red' }}
+        badge_icon: >
+          {{ 'mdi:shield-check' if is_state('switch.pi_hole', 'on') else 'mdi:shield-off-outline' }}
+        badge_color: >
+          {{ 'green' if is_state('switch.pi_hole', 'on') else 'red' }}
+        layout: horizontal
+        card_mod:
+           style: |
+            ha-card {
+              margin-top: 2px !important;
+              margin-bottom: 2px !important;
+              padding: 0 !important;
+            } 
+
+# ─── Gravity Update Button ────────────────────────────
+      - type: custom:mushroom-entity-card
+        entity: button.pi_hole_action_gravity
+        name: Update Gravity
+        icon: mdi:shield-refresh
+        layout: horizontal
+        icon_color: '#FBBC05'
+        tap_action:
+          action: toggle
+        hold_action:
+          action: more-info
+        card_mod:
+          style: |
+            ha-card {
+              margin-top: 2px !important;
+              margin-bottom: 2px !important;
+              padding: 0 !important;
+            }

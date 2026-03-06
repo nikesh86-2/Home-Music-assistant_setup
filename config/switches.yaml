@@ -1,0 +1,25 @@
+- platform: group
+  name: "all plugs"
+  entities:
+    - switch.xbox
+    - switch.p304m_radiator
+    - switch.p304m_soundbar
+    - switch.trex
+    - switch.pc_plug
+    - switch.charger
+    - switch.dehumidifier
+
+- platform: group
+  name: "l plugs"
+  entities:
+    - switch.xbox
+    - switch.p304m_radiator
+    - switch.p304m_soundbar
+    - switch.trex
+    - switch.dehumidifier
+
+- platform: group
+  name: "b plugs"
+  entities:
+    - switch.pc_plug
+    - switch.charger

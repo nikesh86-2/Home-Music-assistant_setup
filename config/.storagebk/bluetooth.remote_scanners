@@ -1,0 +1,303 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "bluetooth.remote_scanners",
+  "data": {
+    "DC:A6:32:B8:8D:53": {
+      "connectable": true,
+      "expire_seconds": 195.0,
+      "discovered_device_advertisement_datas": {
+        "49:49:49:30:29:D7": {
+          "device": {
+            "address": "49:49:49:30:29:D7",
+            "name": null,
+            "rssi": -76,
+            "details": {
+              "source": "DC:A6:32:B8:8D:53",
+              "path": "/org/bluez/hci0/dev_49_49_49_30_29_D7",
+              "props": {
+                "Adapter": "/org/bluez/hci0"
+              }
+            }
+          },
+          "advertisement_data": {
+            "local_name": null,
+            "manufacturer_data": {
+              "224": "00c0ca558fd5"
+            },
+            "service_data": {
+              "0000fe9f-0000-1000-8000-00805f9b34fb": "0000000000000000000000000000000000000000"
+            },
+            "service_uuids": [
+              "0000fe9f-0000-1000-8000-00805f9b34fb"
+            ],
+            "rssi": -76,
+            "tx_power": -127,
+            "platform_data": []
+          }
+        },
+        "08:C7:F5:B7:B7:06": {
+          "device": {
+            "address": "08:C7:F5:B7:B7:06",
+            "name": "PowerHubooIatmjt",
+            "rssi": -75,
+            "details": {
+              "source": "DC:A6:32:B8:8D:53",
+              "path": "/org/bluez/hci0/dev_08_C7_F5_B7_B7_06",
+              "props": {
+                "Adapter": "/org/bluez/hci0"
+              }
+            }
+          },
+          "advertisement_data": {
+            "local_name": "PowerHubooIatmjt",
+            "manufacturer_data": {
+              "687": "033a02"
+            },
+            "service_data": {},
+            "service_uuids": [
+              "e9d7dc58-d2ec-47a5-86c9-290f54985ad5"
+            ],
+            "rssi": -75,
+            "tx_power": -127,
+            "platform_data": []
+          }
+        },
+        "0D:A9:33:34:28:28": {
+          "device": {
+            "address": "0D:A9:33:34:28:28",
+            "name": null,
+            "rssi": -69,
+            "details": {
+              "source": "DC:A6:32:B8:8D:53",
+              "path": "/org/bluez/hci0/dev_0D_A9_33_34_28_28",
+              "props": {
+                "Adapter": "/org/bluez/hci0"
+              }
+            }
+          },
+          "advertisement_data": {
+            "local_name": null,
+            "manufacturer_data": {},
+            "service_data": {
+              "0000fcf1-0000-1000-8000-00805f9b34fb": "04833a3710dd0a2958fc13782921082daa642ab1410f"
+            },
+            "service_uuids": [],
+            "rssi": -69,
+            "tx_power": -127,
+            "platform_data": []
+          }
+        },
+        "75:14:A4:6C:A5:1E": {
+          "device": {
+            "address": "75:14:A4:6C:A5:1E",
+            "name": null,
+            "rssi": -62,
+            "details": {
+              "source": "DC:A6:32:B8:8D:53",
+              "path": "/org/bluez/hci0/dev_75_14_A4_6C_A5_1E",
+              "props": {
+                "Adapter": "/org/bluez/hci0"
+              }
+            }
+          },
+          "advertisement_data": {
+            "local_name": null,
+            "manufacturer_data": {
+              "224": "010eca3a6a75"
+            },
+            "service_data": {
+              "0000fe9f-0000-1000-8000-00805f9b34fb": "026e74715035776a422d486f0000019be0762fee"
+            },
+            "service_uuids": [
+              "0000fe9f-0000-1000-8000-00805f9b34fb"
+            ],
+            "rssi": -62,
+            "tx_power": -127,
+            "platform_data": []
+          }
+        },
+        "09:BD:36:B7:B2:AE": {
+          "device": {
+            "address": "09:BD:36:B7:B2:AE",
+            "name": null,
+            "rssi": -78,
+            "details": {
+              "source": "DC:A6:32:B8:8D:53",
+              "path": "/org/bluez/hci0/dev_09_BD_36_B7_B2_AE",
+              "props": {
+                "Adapter": "/org/bluez/hci0"
+              }
+            }
+          },
+          "advertisement_data": {
+            "local_name": null,
+            "manufacturer_data": {},
+            "service_data": {
+              "0000fef3-0000-1000-8000-00805f9b34fb": "4a1723394757431132d12295de07f4d4d3a4d62846beeb344e9105"
+            },
+            "service_uuids": [],
+            "rssi": -78,
+            "tx_power": -127,
+            "platform_data": []
+          }
+        },
+        "69:B9:91:55:36:F3": {
+          "device": {
+            "address": "69:B9:91:55:36:F3",
+            "name": null,
+            "rssi": -77,
+            "details": {
+              "source": "DC:A6:32:B8:8D:53",
+              "path": "/org/bluez/hci0/dev_69_B9_91_55_36_F3",
+              "props": {
+                "Adapter": "/org/bluez/hci0"
+              }
+            }
+          },
+          "advertisement_data": {
+            "local_name": null,
+            "manufacturer_data": {},
+            "service_data": {
+              "0000fe9f-0000-1000-8000-00805f9b34fb": "0000000000000000000000000000000000000000"
+            },
+            "service_uuids": [
+              "0000fe9f-0000-1000-8000-00805f9b34fb"
+            ],
+            "rssi": -77,
+            "tx_power": -127,
+            "platform_data": []
+          }
+        },
+        "6D:73:3C:BB:A0:E5": {
+          "device": {
+            "address": "6D:73:3C:BB:A0:E5",
+            "name": null,
+            "rssi": -79,
+            "details": {
+              "source": "DC:A6:32:B8:8D:53",
+              "path": "/org/bluez/hci0/dev_6D_73_3C_BB_A0_E5",
+              "props": {
+                "Adapter": "/org/bluez/hci0"
+              }
+            }
+          },
+          "advertisement_data": {
+            "local_name": null,
+            "manufacturer_data": {
+              "224": "0053ca7984a0"
+            },
+            "service_data": {
+              "0000fe9f-0000-1000-8000-00805f9b34fb": "0000000000000000000000000000000000000000"
+            },
+            "service_uuids": [
+              "0000fe9f-0000-1000-8000-00805f9b34fb"
+            ],
+            "rssi": -79,
+            "tx_power": -127,
+            "platform_data": []
+          }
+        },
+        "15:7E:65:67:11:21": {
+          "device": {
+            "address": "15:7E:65:67:11:21",
+            "name": null,
+            "rssi": -71,
+            "details": {
+              "source": "DC:A6:32:B8:8D:53",
+              "path": "/org/bluez/hci0/dev_15_7E_65_67_11_21",
+              "props": {
+                "Adapter": "/org/bluez/hci0"
+              }
+            }
+          },
+          "advertisement_data": {
+            "local_name": null,
+            "manufacturer_data": {},
+            "service_data": {
+              "0000fef3-0000-1000-8000-00805f9b34fb": "4a172336384e3911322f7559182225180a93873790a3a67f029105"
+            },
+            "service_uuids": [],
+            "rssi": -71,
+            "tx_power": -127,
+            "platform_data": []
+          }
+        },
+        "0F:E6:B3:53:B4:9D": {
+          "device": {
+            "address": "0F:E6:B3:53:B4:9D",
+            "name": null,
+            "rssi": -75,
+            "details": {
+              "source": "DC:A6:32:B8:8D:53",
+              "path": "/org/bluez/hci0/dev_0F_E6_B3_53_B4_9D",
+              "props": {
+                "Adapter": "/org/bluez/hci0"
+              }
+            }
+          },
+          "advertisement_data": {
+            "local_name": null,
+            "manufacturer_data": {},
+            "service_data": {
+              "0000fcf1-0000-1000-8000-00805f9b34fb": "04dc4a6d98efe5431eae59a2ce0664765177ff50bb9e"
+            },
+            "service_uuids": [],
+            "rssi": -75,
+            "tx_power": -127,
+            "platform_data": []
+          }
+        },
+        "05:3F:89:A6:E5:CD": {
+          "device": {
+            "address": "05:3F:89:A6:E5:CD",
+            "name": null,
+            "rssi": -75,
+            "details": {
+              "source": "DC:A6:32:B8:8D:53",
+              "path": "/org/bluez/hci0/dev_05_3F_89_A6_E5_CD",
+              "props": {
+                "Adapter": "/org/bluez/hci0"
+              }
+            }
+          },
+          "advertisement_data": {
+            "local_name": null,
+            "manufacturer_data": {},
+            "service_data": {
+              "0000fcf1-0000-1000-8000-00805f9b34fb": "04a4d7c7aae66a519c0490a6d1af980a8020e98d4169"
+            },
+            "service_uuids": [],
+            "rssi": -75,
+            "tx_power": -127,
+            "platform_data": []
+          }
+        }
+      },
+      "discovered_device_timestamps": {
+        "49:49:49:30:29:D7": 1768997083.4544625,
+        "08:C7:F5:B7:B7:06": 1768997082.862473,
+        "0D:A9:33:34:28:28": 1768997005.2238674,
+        "75:14:A4:6C:A5:1E": 1768997083.3024652,
+        "09:BD:36:B7:B2:AE": 1768996989.8241448,
+        "69:B9:91:55:36:F3": 1768996951.6288342,
+        "6D:73:3C:BB:A0:E5": 1768997004.363883,
+        "15:7E:65:67:11:21": 1768997008.0758162,
+        "0F:E6:B3:53:B4:9D": 1768997017.9356387,
+        "05:3F:89:A6:E5:CD": 1768997081.0985048
+      },
+      "discovered_device_raw": {
+        "49:49:49:30:29:D7": "03039ffe17169ffe000000000000000000000000000000000000000009ffe00000c0ca558fd5",
+        "08:C7:F5:B7:B7:06": "0201021107d55a98540f29c986a547ecd258dcd7e91109506f7765724875626f6f4961746d6a7406ffaf02033a02",
+        "0D:A9:33:34:28:28": "0201021916f1fc04833a3710dd0a2958fc13782921082daa642ab1410f",
+        "75:14:A4:6C:A5:1E": "03039ffe17169ffe026e74715035776a422d486f0000019be0762fee09ffe000010eca3a6a75",
+        "09:BD:36:B7:B2:AE": "1e16f3fe4a1723394757431132d12295de07f4d4d3a4d62846beeb344e9105",
+        "69:B9:91:55:36:F3": "03039ffe17169ffe0000000000000000000000000000000000000000",
+        "6D:73:3C:BB:A0:E5": "03039ffe17169ffe0000000000000000000000000000000000000000",
+        "15:7E:65:67:11:21": "1e16f3fe4a172336384e3911322f7559182225180a93873790a3a67f029105",
+        "0F:E6:B3:53:B4:9D": "0201021916f1fc04dc4a6d98efe5431eae59a2ce0664765177ff50bb9e",
+        "05:3F:89:A6:E5:CD": "0201021916f1fc04a4d7c7aae66a519c0490a6d1af980a8020e98d4169"
+      }
+    }
+  }
+}

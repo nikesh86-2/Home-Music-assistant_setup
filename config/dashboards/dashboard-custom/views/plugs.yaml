@@ -1,0 +1,252 @@
+path: plugs
+title: Smart Plugs
+theme: "Google Home Dark"
+hide_header: true
+hide_sidebar: true
+
+cards:
+
+# --- Living Room Pop-up ---
+  - type: vertical-stack
+    cards:
+      - type: custom:bubble-card
+        card_type: pop-up
+        hash: '#livingroom'
+        icon: mdi:power-plug-outline
+        name: Living Room Plugs
+        auto-close: 10000
+
+      - type: horizontal-stack
+        cards:
+          - type: custom:bubble-card
+            card_type: button
+            button_type: switch
+            entity: switch.p304m_radiator
+            name: Radiator
+            icon: mdi:radiator
+            styles: |
+              :host {
+                --bubble-main-background-color: rgba(35,35,40,0.85);
+                --bubble-button-accent-color: #EA4335;
+                --bubble-border-radius: 20px;
+                --bubble-card-box-shadow: 0 0 15px 3px rgba(234,67,53,0.4);
+              }
+              .is-on {
+                --bubble-main-background-color: rgba(255,255,255,0.95);
+                --bubble-card-box-shadow: 0 0 25px 6px rgba(234,67,53,0.6);
+              }
+          - type: custom:bubble-card
+            card_type: button
+            button_type: switch
+            entity: switch.trex
+            name: T-Rex
+            icon: mdi:lamp
+            styles: |
+              :host {
+                --bubble-main-background-color: rgba(35,35,40,0.85);
+                --bubble-button-accent-color: #FB8C00;
+                --bubble-border-radius: 20px;
+                --bubble-card-box-shadow: 0 0 15px 3px rgba(251,140,0,0.4);
+              }
+              .is-on {
+                --bubble-main-background-color: rgba(255,255,255,0.95);
+                --bubble-card-box-shadow: 0 0 25px 6px rgba(251,140,0,0.6);
+              }
+
+      - type: horizontal-stack
+        cards:
+          - type: custom:bubble-card
+            card_type: button
+            button_type: switch
+            entity: switch.xbox
+            name: Xbox
+            icon: mdi:microsoft-xbox
+            styles: |
+              :host {
+                --bubble-main-background-color: rgba(35,35,40,0.85);
+                --bubble-button-accent-color: #107C10;
+                --bubble-border-radius: 20px;
+                --bubble-card-box-shadow: 0 0 15px 3px rgba(16,124,16,0.4);
+              }
+              .is-on {
+                --bubble-main-background-color: rgba(255,255,255,0.95);
+                --bubble-card-box-shadow: 0 0 25px 6px rgba(16,124,16,0.6);
+              }
+
+      - type: horizontal-stack
+        cards:
+          - type: custom:bubble-card
+            card_type: button
+            button_type: switch
+            entity: switch.p304m_soundbar
+            name: Soundbar
+            icon: mdi:soundbar
+            styles: |
+              :host {
+                --bubble-main-background-color: rgba(35,35,40,0.85);
+                --bubble-button-accent-color: #4285F4;
+                --bubble-border-radius: 20px;
+                --bubble-card-box-shadow: 0 0 15px 3px rgba(66,133,244,0.4);
+              }
+              .is-on {
+                --bubble-main-background-color: rgba(255,255,255,0.95);
+                --bubble-card-box-shadow: 0 0 25px 6px rgba(66,133,244,0.6);
+              }
+          - type: custom:bubble-card
+            card_type: button
+            button_type: switch
+            entity: switch.dehumidifier
+            name: Dehumidifier
+            icon: mdi:air-humidifier
+            styles: |
+              :host {
+                --bubble-main-background-color: rgba(35,35,40,0.85);
+                --bubble-button-accent-color: #107C10;
+                --bubble-border-radius: 20px;
+                --bubble-card-box-shadow: 0 0 15px 3px rgba(16,124,16,0.4);
+              }
+              .is-on {
+                --bubble-main-background-color: rgba(255,255,255,0.95);
+                --bubble-card-box-shadow: 0 0 25px 6px rgba(16,124,16,0.6);
+              }
+
+# --- Bedroom Pop-up ---
+  - type: vertical-stack
+    cards:
+      - type: custom:bubble-card
+        card_type: pop-up
+        hash: '#bedroom'
+        icon: mdi:power-plug-outline
+        name: Bedroom Plugs
+        auto-close: 10000
+
+      - type: horizontal-stack
+        cards:
+          - type: custom:bubble-card
+            card_type: button
+            button_type: switch
+            entity: switch.pc_plug
+            name: PC
+            icon: mdi:monitor
+            styles: |
+              :host {
+                --bubble-main-background-color: rgba(35,35,40,0.85);
+                --bubble-button-accent-color: #FB8C00;
+                --bubble-border-radius: 20px;
+                --bubble-card-box-shadow: 0 0 15px 3px rgba(234,67,53,0.4);
+              }
+              .is-on {
+                --bubble-main-background-color: rgba(255,255,255,0.95);
+                --bubble-card-box-shadow: 0 0 25px 6px rgba(234,67,53,0.6);
+              }
+
+          - type: custom:bubble-card
+            card_type: button
+            button_type: switch
+            entity: switch.charger
+            name: Charger
+            icon: mdi:battery-charging
+            styles: |
+              :host {
+                --bubble-main-background-color: rgba(35,35,40,0.85);
+                --bubble-button-accent-color: #4285F4;
+                --bubble-border-radius: 20px;
+                --bubble-card-box-shadow: 0 0 15px 3px rgba(66,133,244,0.4);
+              }
+              .is-on {
+                --bubble-main-background-color: rgba(255,255,255,0.95);
+                --bubble-card-box-shadow: 0 0 25px 6px rgba(66,133,244,0.6);
+              }
+
+# --- Normal UI ---
+  - type: horizontal-stack
+    cards:
+      - type: custom:button-card
+        icon: mdi:arrow-left
+        show_name: false
+        styles:
+          card:
+            - width: 36px
+            - height: 36px
+            - border-radius: 50%
+            - margin: 4px
+            - background: rgba(45,45,50,0.9)
+        tap_action:
+          action: navigate
+          navigation_path: /dashboard-custom/home
+          
+  - type: custom:bubble-card
+    card_type: separator
+    name: Smart Plugs - Select icon for more
+    icon: mdi:power-socket-uk
+
+  - type: custom:bubble-card
+    card_type: button
+    button_type: switch
+    entity: switch.all_plugs  # UPDATED
+    name: All Smart Plugs
+    icon: mdi:connection
+    show_state: false
+    show_name: true
+    styles: |
+      :host {
+        --bubble-main-background-color: rgba(35,35,40,0.85);
+        --bubble-button-accent-color: #8B8000;
+        --bubble-border-radius: 20px;
+        --bubble-card-box-shadow: 0 0 15px 3px rgba(234,67,53,0.4);
+      }
+      .is-on {
+        --bubble-main-background-color: rgba(255,255,255,0.95);
+        --bubble-icon-color: #8B8000;
+        --bubble-card-box-shadow: 0 0 20px 5px rgba(234,67,53,0.6);
+      }
+
+  - type: custom:bubble-card
+    card_type: button
+    button_type: switch
+    entity: switch.b_plugs  # UPDATED
+    name: Bedroom Smart Plugs
+    icon: mdi:connection
+    show_state: false
+    show_name: true
+    styles: |
+      :host {
+        --bubble-main-background-color: rgba(35,35,40,0.85);
+        --bubble-button-accent-color: #EA4335;
+        --bubble-border-radius: 20px;
+        --bubble-card-box-shadow: 0 0 15px 3px rgba(234,67,53,0.4);
+      }
+      .is-on {
+        --bubble-main-background-color: rgba(255,255,255,0.95);
+        --bubble-icon-color: #EA4335;
+        --bubble-card-box-shadow: 0 0 20px 5px rgba(234,67,53,0.6);
+      }
+
+  - type: custom:bubble-card
+    card_type: button
+    button_type: switch
+    entity: switch.l_plugs  # UPDATED
+    name: Living Room Smart Plugs
+    icon: mdi:connection
+    show_state: false
+    show_name: true
+    styles: |
+      :host {
+        --bubble-main-background-color: rgba(35,35,40,0.85);
+        --bubble-button-accent-color: #4285F4;
+        --bubble-border-radius: 20px;
+        --bubble-card-box-shadow: 0 0 15px 3px rgba(234,67,53,0.4);
+      }
+      .is-on {
+        --bubble-main-background-color: rgba(255,255,255,0.95);
+        --bubble-icon-color: #4285F4;
+        --bubble-card-box-shadow: 0 0 20px 5px rgba(234,67,53,0.6);
+      }
+
+  - type: custom:bubble-card
+    card_type: horizontal-buttons-stack
+    highlight_current_view: true
+    1_link: '#livingroom'
+    2_link: '#bedroom'
+    1_icon: mdi:sofa
+    2_icon: mdi:bed

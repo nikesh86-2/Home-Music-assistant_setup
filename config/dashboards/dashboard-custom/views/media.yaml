@@ -1,0 +1,168 @@
+path: media
+title: Media
+theme: "Google Home Dark"
+hide_header: true
+hide_sidebar: true
+
+cards:
+  # --- Back Button ---
+  - type: horizontal-stack
+    cards:
+      - type: custom:button-card
+        icon: mdi:arrow-left
+        show_name: false
+        styles:
+          card:
+            - width: 36px
+            - height: 36px
+            - border-radius: 50%
+            - margin: 4px
+            - background: rgba(45,45,50,0.9)
+        tap_action:
+          action: navigate
+          navigation_path: /dashboard-custom/home
+          
+  # ===== Music Assistant Player (Always Visible) =====
+
+  - type: custom:bubble-card
+    card_type: separator
+    name: Music Assistant Center
+    icon: mdi:music-box-multiple
+
+  - type: custom:bubble-card
+    card_type: button
+    button_type: name
+    name: Music Assistant
+    icon: mdi:music-circle
+    button_action:
+      tap_action:
+        action: navigate
+        navigation_path: /dashboard-music
+    styles: |
+      :host {
+        /* Accent / content */
+        --bubble-button-main-background-color: #B71C1C;
+        --bubble-button-text-color: #FFFFFF;
+
+        /* Sizing */
+        --bubble-button-padding: 14px;
+        --bubble-border-radius: 18px;
+        --bubble-button-font-size: 1.1rem;
+        --bubble-button-font-weight: 700;
+      }
+
+  # ===== Individual Speaker Controls =====
+  - type: custom:bubble-card
+    card_type: separator
+    name: Speaker Volume & Info
+    icon: mdi:speaker-multiple
+
+  - type: vertical-stack
+    cards:
+    # ── Living Room ──────────────────────────────────────────
+    - type: custom:bubble-card
+      card_type: media-player
+      entity: media_player.living_room_display_2
+      name: Living Room
+      show_volume_level: true
+      use_media_info: true
+      cover_background: false
+      styles: |
+        :host {
+          --bubble-media-player-main-background-color: #4285F4;
+          --bubble-media-player-border-radius: 20px;
+          --bubble-media-player-buttons-border-radius: 16px;
+          --bubble-media-player-slider-background-color: rgba(255,255,255,0.22);
+          --bubble-media-player-icon-border-radius: 16px;
+          --bubble-media-player-icon-background-color: rgba(0,0,0,0.28);
+          --bubble-media-player-box-shadow: 0 16px 34px rgba(0,0,0,0.62);
+        }
+        ha-card {
+          background: rgba(16,16,20,0.94) !important;
+          border: 1px solid rgba(66,133,244,0.32) !important;
+          box-shadow:
+            0 18px 38px rgba(0,0,0,0.70),
+            0 2px 0 rgba(255,255,255,0.03) inset,
+            0 0 18px rgba(66,133,244,0.18) !important;
+        }
+
+    # ── Bedroom ──────────────────────────────────────────────
+    - type: custom:bubble-card
+      card_type: media-player
+      entity: media_player.bedroom_speaker_2
+      name: Bedroom
+      show_volume_level: true
+      use_media_info: true
+      cover_background: false
+      styles: |
+        :host {
+          --bubble-media-player-main-background-color: #EA4335;
+          --bubble-media-player-border-radius: 20px;
+          --bubble-media-player-buttons-border-radius: 16px;
+          --bubble-media-player-slider-background-color: rgba(255,255,255,0.22);
+          --bubble-media-player-icon-border-radius: 16px;
+          --bubble-media-player-icon-background-color: rgba(0,0,0,0.28);
+          --bubble-media-player-box-shadow: 0 16px 34px rgba(0,0,0,0.62);
+        }
+        ha-card {
+          background: rgba(16,16,20,0.94) !important;
+          border: 1px solid rgba(234,67,53,0.30) !important;
+          box-shadow:
+            0 18px 38px rgba(0,0,0,0.70),
+            0 2px 0 rgba(255,255,255,0.03) inset,
+            0 0 18px rgba(234,67,53,0.16) !important;
+        }
+
+    # ── Kitchen ──────────────────────────────────────────────
+    - type: custom:bubble-card
+      card_type: media-player
+      entity: media_player.kitchen_speaker_2
+      name: Kitchen
+      show_volume_level: true
+      use_media_info: true
+      cover_background: false
+      styles: |
+        :host {
+          --bubble-media-player-main-background-color: #FB8C00;
+          --bubble-media-player-border-radius: 20px;
+          --bubble-media-player-buttons-border-radius: 16px;
+          --bubble-media-player-slider-background-color: rgba(255,255,255,0.22);
+          --bubble-media-player-icon-border-radius: 16px;
+          --bubble-media-player-icon-background-color: rgba(0,0,0,0.28);
+          --bubble-media-player-box-shadow: 0 16px 34px rgba(0,0,0,0.62);
+        }
+        ha-card {
+          background: rgba(16,16,20,0.94) !important;
+          border: 1px solid rgba(251,140,0,0.30) !important;
+          box-shadow:
+            0 18px 38px rgba(0,0,0,0.70),
+            0 2px 0 rgba(255,255,255,0.03) inset,
+            0 0 18px rgba(251,140,0,0.16) !important;
+        }
+
+    # ── Nala's Room ─────────────────────────────────────────
+    - type: custom:bubble-card
+      card_type: media-player
+      entity: media_player.nalas_room_speaker_2
+      name: Nala's Room
+      show_volume_level: true
+      use_media_info: true
+      cover_background: false
+      styles: |
+        :host {
+          --bubble-media-player-main-background-color: #34A853;
+          --bubble-media-player-border-radius: 20px;
+          --bubble-media-player-buttons-border-radius: 16px;
+          --bubble-media-player-slider-background-color: rgba(255,255,255,0.22);
+          --bubble-media-player-icon-border-radius: 16px;
+          --bubble-media-player-icon-background-color: rgba(0,0,0,0.28);
+          --bubble-media-player-box-shadow: 0 16px 34px rgba(0,0,0,0.62);
+        }
+        ha-card {
+          background: rgba(16,16,20,0.94) !important;
+          border: 1px solid rgba(52,168,83,0.30) !important;
+          box-shadow:
+            0 18px 38px rgba(0,0,0,0.70),
+            0 2px 0 rgba(255,255,255,0.03) inset,
+            0 0 18px rgba(52,168,83,0.16) !important;
+        }

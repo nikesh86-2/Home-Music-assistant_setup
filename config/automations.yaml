@@ -1,0 +1,325 @@
+- id: '1763150881545'
+  alias: 'Stairs '
+  description: ''
+  use_blueprint:
+    path: homeassistant/motion_light.yaml
+    input:
+      motion_entity: binary_sensor.lower_stairs_sensor_motion
+      light_target:
+        entity_id:
+        - light.stairs
+        - light.landing
+- id: '1764359206536'
+  alias: lroom>kitchen
+  description: Motion light active only during morning and evening hours
+  conditions:
+  - condition: or
+    conditions:
+    - condition: time
+      after: 05:00:00
+      before: 09:00:00
+    - condition: time
+      after: '15:30:00'
+      before: '23:59:59'
+  use_blueprint:
+    path: homeassistant/motion_light.yaml
+    input:
+      motion_entity: binary_sensor.lower_stairs_sensor_motion
+      light_target:
+        entity_id: light.kitchen
+      no_motion_wait: 3600
+- id: '1765255708411'
+  alias: Bathroom light on
+  description: Only triggers in the early morning and evening
+  conditions:
+  - condition: or
+    conditions:
+    - condition: time
+      after: 05:00:00
+      before: 08:30:00
+    - condition: time
+      after: '15:30:00'
+      before: '22:00:00'
+  use_blueprint:
+    path: homeassistant/motion_light.yaml
+    input:
+      motion_entity: binary_sensor.bathroom2
+      light_target:
+        entity_id: light.bathroom
+      no_motion_wait: 762
+- id: '1767696141026'
+  alias: kitchen detector
+  description: Motion light active only during morning and evening hours
+  conditions:
+  - condition: or
+    conditions:
+    - condition: time
+      after: 05:00:00
+      before: 09:00:00
+    - condition: time
+      after: '15:30:00'
+      before: '21:59:59'
+  use_blueprint:
+    path: homeassistant/motion_light.yaml
+    input:
+      motion_entity: binary_sensor.kitchen_detector_motion
+      light_target:
+        entity_id: light.kitchen
+      no_motion_wait: 3600
+- id: '1767696369478'
+  alias: nala stairs
+  description: ''
+  use_blueprint:
+    path: homeassistant/motion_light.yaml
+    input:
+      motion_entity: binary_sensor.lowerstairs_motion
+      light_target:
+        entity_id:
+        - light.stairs
+        - light.large
+        device_id: e6dc96b65fb69b58027fb32e1024e6e5
+- id: '1767701072809'
+  alias: 'Heating: Master List Zonal Boost'
+  description: Boosts rooms based strictly on Thermostat current_temperature attributes.
+  triggers:
+  - trigger: time
+    at: 05:45:00
+    id: weekday_kickstart
+  - trigger: time
+    at: 08:00:00
+    id: weekend_kickstart
+  - trigger: numeric_state
+    entity_id:
+    - climate.nala_thermostat
+    - climate.bedroom_stat
+    - climate.kitchen_thermostat
+    - climate.living_room_thermostat
+    - climate.rosa_thermostat
+    attribute: current_temperature
+    below: 14
+  conditions:
+  - condition: numeric_state
+    entity_id: zone.home
+    above: 0
+  - condition: state
+    entity_id: input_boolean.night_mode
+    state: 'off'
+  - condition: template
+    value_template: "{% set day = now().isoweekday() %} {% set time = now().strftime('%H:%M')
+      %} {% if day in [5, 6, 7] %}\n  {{ '08:00' <= time <= '20:30' }}\n{% else %}\n
+      \ {{ '05:45' <= time <= '20:30' }}\n{% endif %}\n"
+  - condition: state
+    entity_id: input_boolean.heating_boost_active
+    state: 'off'
+  actions:
+  - action: scene.create
+    data:
+      scene_id: before_heating_boost
+      snapshot_entities:
+      - climate.rosa_thermostat
+      - climate.nala_thermostat
+      - climate.kitchen_thermostat
+      - climate.bedroom_stat
+      - climate.living_room_thermostat
+      - climate.living_room
+      - switch.radiator
+  - action: input_boolean.turn_on
+    target:
+      entity_id: input_boolean.heating_boost_active
+  - action: climate.set_temperature
+    target:
+      entity_id: climate.living_room
+    data:
+      temperature: 21
+      hvac_mode: heat
+  - action: notify.mobile_app_pixel_8
+    data:
+      title: "\U0001F525 Heating Master Boost"
+      message: Boiler fired. Boosting cold rooms.
+      data:
+        tag: heating-boost
+        actions:
+        - action: CANCEL_HEATING_BOOST
+          title: Stop Heating Now
+          destructive: true
+  - action: notify.mobile_app_iphone
+    data:
+      title: "\U0001F525 Heating Master Boost"
+      message: Boiler fired. Boosting cold rooms.
+      data:
+        tag: heating-boost
+        actions:
+        - action: CANCEL_HEATING_BOOST
+          title: Stop Heating Now
+          destructive: true
+  - repeat:
+      while:
+      - condition: template
+        value_template: "{% set entities = [\n  'climate.rosa_thermostat', 'climate.nala_thermostat',\n
+          \ 'climate.smart_radiator_valve', 'climate.bedroom_stat',\n  'climate.living_room_thermostat'\n]
+          %}  {% set cold_rooms = entities | map('state_attr', 'current_temperature')
+          | map('float', 20) | select('lt', 12.5) | list %}  {{ repeat.index <= 3
+          and cold_rooms | length > 0 }}"
+      sequence:
+      - action: climate.set_temperature
+        target:
+          entity_id: climate.rosa_thermostat
+        data:
+          temperature: '{{ 20 if state_attr(''climate.rosa_thermostat'', ''current_temperature'')
+            | float(20) < 12.5 else 12 }}'
+      - action: climate.set_temperature
+        target:
+          entity_id: climate.nala_thermostat
+        data:
+          temperature: '{{ 20 if state_attr(''climate.nala_thermostat'', ''current_temperature'')
+            | float(20) < 12.5 else 12 }}'
+      - action: climate.set_temperature
+        target:
+          entity_id: climate.bedroom_stat
+        data:
+          temperature: '{{ 20 if state_attr(''climate.bedroom_stat'', ''current_temperature'')
+            | float(20) < 12.5 else 12 }}'
+      - action: climate.set_temperature
+        target:
+          entity_id: climate.kitchen_thermostat
+        data:
+          temperature: '{{ 20 if state_attr(''climate.kitchen_thermostat'', ''current_temperature'')
+            | float(20) < 12.5 else 12 }}'
+      - action: climate.set_temperature
+        target:
+          entity_id: climate.living_room_thermostat
+        data:
+          temperature: '{{ 20 if state_attr(''climate.living_room_thermostat'', ''current_temperature'')
+            | float(20) < 12.5 else 12 }}'
+      - action: '{{ ''switch.turn_on'' if state_attr(''climate.living_room_thermostat'',
+          ''current_temperature'') | float(20) < 12.5 else ''switch.turn_off'' }}
+
+          '
+        target:
+          entity_id: switch.radiator
+      - delay: 00:20:00
+  - action: scene.turn_on
+    target:
+      entity_id: scene.before_heating_boost
+  - action: input_boolean.turn_off
+    target:
+      entity_id: input_boolean.heating_boost_active
+  - action: switch.turn_off
+    target:
+      entity_id: switch.radiator
+  mode: restart
+- id: '1767710307428'
+  alias: 'Heating: Cancel Boost via Phone'
+  description: Stops the main boost loop and restores the Boiler Gatekeeper
+  triggers:
+  - trigger: event
+    event_type: mobile_app_notification_action
+    event_data:
+      action: CANCEL_HEATING_BOOST
+  actions:
+  - action: automation.stop
+    target:
+      entity_id: automation.heating_master_list_zonal_boost
+  - action: input_boolean.turn_off
+    target:
+      entity_id: input_boolean.heating_boost_active
+  - action: scene.turn_on
+    target:
+      entity_id: scene.before_heating_boost
+    continue_on_error: true
+  - action: switch.turn_off
+    target:
+      entity_id: switch.radiator
+  - action: notify.mobile_app_pixel_8
+    data:
+      title: ✅ Boost Successfully Cancelled
+      message: The boiler has been released and radiator turned off.
+      data:
+        tag: heating-boost
+        notification_icon: mdi:radiator-off
+        color: '#2ecc71'
+  - action: notify.mobile_app_iphone
+    data:
+      title: ✅ Boost Cancelled
+      message: Heating restored to previous settings.
+      data:
+        tag: heating-boost
+        push:
+          sound:
+            name: default
+            critical: 1
+            volume: 0.5
+        color: '#2ecc71'
+        presentation_options:
+        - alert
+  mode: parallel
+- id: '1768081969418'
+  alias: Lights off kitchen bathroom at 2300
+  description: ''
+  triggers:
+  - trigger: time
+    at: '23:00:00'
+  conditions: []
+  actions:
+  - action: light.turn_off
+    metadata: {}
+    data: {}
+    target:
+      entity_id:
+      - light.bathroom
+      - light.kitchen
+  mode: single
+- id: '1768283719003'
+  alias: Bath night light
+  description: 'Bathroom night light: 10 PM to 11:30 PM for 5 minutes'
+  triggers:
+  - entity_id: binary_sensor.bathroom_detector_motion
+    from: 'off'
+    to: 'on'
+    trigger: state
+  conditions:
+  - condition: time
+    after: '22:00:00'
+    before: '23:30:00'
+  use_blueprint:
+    path: homeassistant/motion_light.yaml
+    input:
+      motion_entity: binary_sensor.bathroom2
+      light_target:
+        entity_id: light.bathroom
+      no_motion_wait: 240
+- id: '1768283773824'
+  alias: Kitchen night light
+  description: 'Bathroom night light: 10 PM to 11:30 PM for 5 minutes'
+  triggers:
+  - entity_id: binary_sensor.bathroom_detector_motion
+    from: 'off'
+    to: 'on'
+    trigger: state
+  conditions:
+  - condition: time
+    after: '22:00:00'
+    before: '23:30:00'
+  use_blueprint:
+    path: homeassistant/motion_light.yaml
+    input:
+      motion_entity: binary_sensor.kitchen_detector_motion
+      light_target:
+        entity_id: light.kitchen
+      no_motion_wait: 240
+- id: '1769425293913'
+  alias: 'System: Night Mode Control'
+  description: Toggles Night Mode boolean based on time
+  triggers:
+  - trigger: time
+    at: '22:30:00'
+    id: activate
+  - trigger: time
+    at: 05:30:00
+    id: deactivate
+  actions:
+  - action: "{% if trigger.id == 'activate' %}\n  input_boolean.turn_on\n{% else %}\n
+      \ input_boolean.turn_off\n{% endif %}\n"
+    target:
+      entity_id: input_boolean.night_mode
+  mode: single

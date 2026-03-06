@@ -1,0 +1,324 @@
+path: home
+title: Home
+theme: "Google Home Dark"
+hide_header: true
+hide_sidebar: true
+cards:
+#-----------------------------------------
+  - type: vertical-stack
+    cards:
+      - type: custom:bubble-card
+        card_type: pop-up
+        icon: mdi:human-female-girl
+        hash: '#Rach'
+        name: Rachel
+        auto-close: 10000          
+      
+      - type: vertical-stack
+        cards:
+          - type: custom:mushroom-person-card
+            entity: person.rachel
+            name: Rachel
+            secondary_info: state
+            tap_action:
+              action: none
+              
+          - type: map
+            entities:
+              - person.rachel
+            default_zoom: 15
+            hours_to_show: 6
+
+          - type: custom:mushroom-chips-card
+            chips:
+              # 🔋 Battery (templated + coloured)
+              - type: template
+                entity: sensor.iphone_battery_level
+                content: "{{ states('sensor.iphone_battery_level') }}%"
+                icon: mdi:battery
+                icon_color: >
+                  {% set lvl = states('sensor.iphone_battery_level')|int(0) %}
+                  {% if lvl < 20 %} red
+                  {% elif lvl < 50 %} orange
+                  {% else %} green
+                  {% endif %}
+
+              # ⚡ Charging state
+              - type: template
+                entity: sensor.iphone_battery_state
+                content: "{{ states('sensor.iphone_battery_state') }}"
+                icon: >
+                  {% if states('sensor.iphone_battery_state') == 'Charging' %}
+                    mdi:battery-charging
+                  {% else %}
+                    mdi:battery
+                  {% endif %}
+                icon_color: >
+                  {% if states('sensor.iphone_battery_state') == 'Charging' %}
+                    green
+                  {% else %}
+                    disabled
+                  {% endif %}
+
+              # 📍 Location
+              - type: template
+                entity: sensor.iphone_geocoded_location
+                content: "{{ states('sensor.iphone_geocoded_location') }}"
+                icon: mdi:map-marker
+
+              # 📶 Wi-Fi (BSSID-based)
+              - type: template
+                entity: sensor.iphone_ssid
+                content: >
+                  {% if states('sensor.iphone_ssid') in ['unknown','unavailable','Not Connected'] %}
+                    No Wi-Fi
+                  {% else %}
+                    Wi-Fi Connected
+                  {% endif %}
+                icon: mdi:wifi
+                icon_color: >
+                  {% if states('sensor.iphone_ssid') in ['unknown','unavailable','Not Connected'] %}
+                    disabled
+                  {% else %}
+                    blue
+                  {% endif %}
+              - type: template
+                entity: person.rachel
+                icon: mdi:map-marker-distance
+                content: >
+                  {% set d = distance('person.rachel','zone.home') %}
+                  {% if d is not none %}
+                    {{ d | round(1) }} km
+                  {% else %}
+                    —
+                  {% endif %}
+
+
+  - type: vertical-stack
+    cards:
+      - type: custom:bubble-card
+        card_type: pop-up
+        icon: mdi:human-male-girl
+        hash: '#Nike'
+        name: Nikesh
+        auto-close: 10000
+
+      - type: vertical-stack
+        cards:
+          - type: custom:mushroom-person-card
+            entity: person.nikesh
+            name: Nikesh
+            secondary_info: state
+            tap_action:
+              action: none
+              
+          - type: map
+            entities:
+              - person.nikesh
+            default_zoom: 15
+            hours_to_show: 6
+          
+          - type: custom:mushroom-chips-card
+            chips:
+              # 🔋 Battery
+              - type: template
+                entity: sensor.pixel_8_battery_level
+                content: "{{ states('sensor.pixel_8_battery_level') }}%"
+                icon: mdi:battery
+                icon_color: >
+                  {% set lvl = states('sensor.pixel_8_battery_level')|int(0) %}
+                  {% if lvl < 20 %} red
+                  {% elif lvl < 50 %} orange
+                  {% else %} green
+                  {% endif %}
+
+              # ⚡ Battery state
+              - type: template
+                entity: sensor.pixel_8_battery_state
+                content: "{{ states('sensor.pixel_8_battery_state') }}"
+                icon: >
+                  {% if states('sensor.pixel_8_battery_state') == 'charging' %}
+                    mdi:battery-charging
+                  {% else %}
+                    mdi:battery
+                  {% endif %}
+                icon_color: >
+                  {% if states('sensor.pixel_8_battery_state') == 'charging' %}
+                    green
+                  {% else %}
+                    disabled
+                  {% endif %}
+
+              # 🔌 Charger type
+              - type: template
+                entity: sensor.pixel_8_charger_type
+                content: >
+                  {% if states('sensor.pixel_8_charger_type') in ['unknown','unavailable'] %}
+                    On Battery
+                  {% else %}
+                    {{ states('sensor.pixel_8_charger_type') }}
+                  {% endif %}
+                icon: mdi:power-plug
+              - type: template
+                entity: person.nikesh
+                icon: mdi:map-marker-distance
+                content: >
+                  {% set d = distance('person.nikesh','zone.home') %}
+                  {% if d is not none %}
+                    {{ d | round(1) }} km
+                  {% else %}
+                    —
+                  {% endif %}
+
+
+
+
+
+  - type: custom:bubble-card
+    card_type: button
+    button_type: name
+    entity: light.all_lights
+    icon: mdi:lightbulb
+    name: Lights
+    show_state: true
+    tap_action:
+      action: navigate
+      navigation_path: /dashboard-custom/lights
+    styles: |
+      * { font-size: 18px !important; }
+      .bubble-icon { --mdc-icon-size: 30px !important; }
+      :host { --bubble-main-background-color: rgba(35,35,40,0.85); --bubble-border-radius: 24px; --bubble-card-box-shadow: 0 4px 8px rgba(0,0,0,0.4); }
+      .is-on { --bubble-button-background-color: #87CEEB; --bubble-card-box-shadow: 0 0 20px 4px rgba(255,255,0,0.6); }
+ 
+  - type: custom:bubble-card
+    card_type: button
+    button_type: name
+    entity: group.all_media
+    icon: mdi:cast-audio-variant
+    name: Media
+    show_state: true
+    tap_action:
+      action: navigate
+      navigation_path: /dashboard-custom/media
+    styles: |
+      * { font-size: 18px !important; }
+      .bubble-icon { --mdc-icon-size: 30px !important; }
+      :host { --bubble-main-background-color: rgba(35,35,40,0.85); --bubble-border-radius: 24px; --bubble-card-box-shadow: 0 4px 8px rgba(0,0,0,0.4); }
+      .is-on { --bubble-button-background-color: #00FF00; --bubble-card-box-shadow: 0 0 20px 4px rgba(255,255,0,0.6); }
+
+  - type: custom:bubble-card
+    card_type: button
+    button_type: name
+    entity: group.all_climate
+    icon: mdi:radiator
+    name: Climate
+    show_state: true
+    tap_action:
+      action: navigate
+      navigation_path: /dashboard-custom/radiators
+    styles: |
+      * { font-size: 18px !important; }
+      .bubble-icon { --mdc-icon-size: 30px !important; }
+      :host { --bubble-main-background-color: rgba(35,35,40,0.85); --bubble-border-radius: 24px; --bubble-card-box-shadow: 0 4px 8px rgba(0,0,0,0.4); }
+      .is-on { --bubble-button-background-color: #8B0000; --bubble-card-box-shadow: 0 0 20px 4px rgba(139,0,0,0.6); }
+
+
+  - type: custom:bubble-card
+    card_type: button
+    button_type: name
+    entity: switch.all_plugs
+    icon: mdi:power-socket-uk
+    name: "Smart Plugs"
+    show_state: true
+    tap_action:
+      action: navigate
+      navigation_path: /dashboard-custom/plugs
+    styles: |
+      * { font-size: 18px !important; }
+      .bubble-icon { --mdc-icon-size: 30px !important; }
+      :host { --bubble-main-background-color: rgba(35,35,40,0.85); --bubble-border-radius: 24px; --bubble-card-box-shadow: 0 4px 8px rgba(0,0,0,0.4); }
+      .is-on { --bubble-main-background-color: #8B8000; --bubble-card-box-shadow: 0 0 20px 4px rgba(255,100,100,0.6); }
+
+  - type: custom:bubble-card
+    card_type: button
+    button_type: name
+    entity: switch.pi_hole
+    icon: mdi:pi-hole
+    name: "Pi-Hole"
+    show_state: true
+    tap_action:
+      action: navigate
+      navigation_path: /dashboard-custom/pihole
+    styles: |
+      * { font-size: 18px !important; }
+      .bubble-icon { --mdc-icon-size: 30px !important; }
+      :host { --bubble-main-background-color: rgba(35,35,40,0.85); --bubble-border-radius: 24px; --bubble-card-box-shadow: 0 4px 8px rgba(0,0,0,0.4); }
+      .is-on { --bubble-main-background-color: #FF6464; --bubble-card-box-shadow: 0 0 20px 4px rgba(255,100,100,0.6); }
+
+  - type: custom:clock-weather-card
+    entity: weather.weather
+    locale: en-GB
+    sun_entity: sun.sun
+    forecast_rows: 7
+    card_mod:
+      style: |
+        clock-weather-card-today-right-wrap-center {
+         font-size: 40px !important;
+         }
+        clock-weather-card-today-right-wrap-bottom {
+         font-size: 15px; !important;
+         margin-top: 2px; !important;
+         margin-left: 5px; !important;
+         }
+        clock-weather-card-today-right-wrap-top {
+         font-size: 15px !important;
+         justify-content: start;
+         margin-left: -15px; !important;
+         margin-top: -5px !important;
+         }
+        clock-weather-card-today-left img {
+         # height:70px !important;
+         }
+        clock-weather-card-forecast-row {
+         width: 445px !important;
+         font-size: 20px; !important;
+         margin-left: -10px; !important;
+         }
+        forecast-temperature-bar {
+         margin-left: 20px !important;
+         }
+        forecast-icon {
+         margin-left: 20px !important;
+         size: 5px !important;
+         height: 30px !important;
+         width: 30px !important;
+         }
+        forecast-text {
+         font-size: 15px !important;
+         margin-left: 20px !important;
+         }
+        ha-card {
+         background: none !important;
+         box-shadow: none !important;
+         border-width: 0px !important;
+         }
+        forecast-text:nth-child(5){
+          margin-left: 55px;
+          color: white;
+          z-index: 0;
+         }
+#-----------------------------------------
+
+
+  - type: custom:bubble-card
+    card_type: horizontal-buttons-stack
+    1_name: Rachel
+    2_name: Nikesh
+    1_link: '#Rach'
+    2_link: '#Nike'
+    1_icon: mdi:human-female-girl
+    2_icon: mdi:human-male-boy
+
+
+
+

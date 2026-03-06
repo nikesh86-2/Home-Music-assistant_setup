@@ -1,0 +1,57 @@
+toggle_heating:
+  alias: Toggle Heating
+  mode: single
+  icon: mdi:fire
+  sequence:
+  - variables:
+      heaters:
+      - climate.living_room_thermostat
+      - climate.nala_thermostat
+      - climate.rosa_thermostat
+      - climate.bedroom_stat
+      - climate.kitchen_thermostat
+      main_room: climate.living_room
+      main_temp: 19
+      other_temp: 20
+      off_temp: 12
+  - variables:
+      current_temp: '{{ state_attr(main_room, ''current_temperature'') | float(0)
+        }}'
+      target_temp: '{{ state_attr(main_room, ''temperature'') | float(0) }}'
+      heating_on: '{{ target_temp > current_temp + 0.5 }}'
+  - choose:
+    - conditions:
+      - condition: template
+        value_template: '{{ not heating_on }}'
+      sequence:
+      - target:
+          entity_id: '{{ main_room }}'
+        data:
+          temperature: '{{ main_temp }}'
+        action: climate.set_temperature
+      - repeat:
+          for_each: '{{ heaters }}'
+          sequence:
+          - target:
+              entity_id: '{{ repeat.item }}'
+            data:
+              temperature: '{{ other_temp }}'
+            action: climate.set_temperature
+    default:
+    - target:
+        entity_id: '{{ main_room }}'
+      data:
+        temperature: '{{ off_temp }}'
+      action: climate.set_temperature
+    - repeat:
+        for_each: '{{ heaters }}'
+        sequence:
+        - target:
+            entity_id: '{{ repeat.item }}'
+          data:
+            temperature: '{{ off_temp }}'
+          action: climate.set_temperature
+
+# Boost button for heating:
+#fires boiler using nest and sets all radiators to 20
+#second press resets to 12 for an 'off' state

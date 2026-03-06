@@ -1,0 +1,369 @@
+path: radiators
+title: Radiators
+theme: "Google Home Dark"
+hide_header: true
+hide_sidebar: true
+
+cards:
+
+  #################################################
+  #                    POP-UPS                   #
+  #################################################
+
+  # --- Bedroom Pop-up ---
+  - type: vertical-stack
+    cards:
+      - type: custom:bubble-card
+        card_type: pop-up
+        hash: '#bedroom'
+        icon: mdi:heat-wave
+        name: Bedroom Radiator
+        auto-close: 10000
+      - type: custom:bubble-card
+        card_type: climate
+        entity: climate.bedroom_stat
+        name: Bedroom
+        icon: mdi:thermometer
+        show_state: true
+        show_name: true
+        show_icon: true
+        hide_target_temp_low: true
+        hide_target_temp_high: true
+        step: 0.5
+        min_temp: 5
+        max_temp: 30
+        styles: |
+          :host {
+            --bubble-climate-background-color: #FFA500;
+          }
+          .is-off {  
+            --bubble-climate-background-color: #EA4335;
+          }
+        sub_button:
+          - name: HVAC modes menu
+            select_attribute: hvac_modes
+            show_arrow: false
+            state_background: false
+
+  # --- Living Room Pop-up ---
+  - type: vertical-stack
+    cards:
+      - type: custom:bubble-card
+        card_type: pop-up
+        hash: '#livingroom'
+        icon: mdi:heat-wave
+        name: Living Room Radiator
+        auto-close: 10000
+      - type: custom:bubble-card
+        card_type: climate
+        entity: climate.living_room_thermostat
+        name: Living Room
+        icon: mdi:thermometer
+        show_state: true
+        show_name: true
+        show_icon: true
+        hide_target_temp_low: true
+        hide_target_temp_high: true
+        step: 0.5
+        min_temp: 5
+        max_temp: 30
+        styles: |
+          :host {
+            --bubble-climate-background-color: #FFA500;
+          }
+          .is-off {  
+            --bubble-climate-background-color: #4285F4;
+          }
+        sub_button:
+          - name: HVAC modes menu
+            select_attribute: hvac_modes
+            show_arrow: false
+            state_background: false
+
+  # --- Nala Pop-up ---
+  - type: vertical-stack
+    cards:
+      - type: custom:bubble-card
+        card_type: pop-up
+        hash: '#nala'
+        icon: mdi:heat-wave
+        name: Nala's Room
+        auto-close: 10000
+      - type: custom:bubble-card
+        card_type: climate
+        entity: climate.nala_thermostat
+        name: Nala's Room
+        icon: mdi:thermometer
+        show_state: true
+        show_name: true
+        show_icon: true
+        hide_target_temp_low: true
+        hide_target_temp_high: true
+        step: 0.5
+        min_temp: 5
+        max_temp: 30
+        styles: |
+          :host {
+            --bubble-climate-background-color: #FFA500;
+          }
+          .is-off {  
+            --bubble-climate-background-color: #34A853;
+          }
+        sub_button:
+          - name: HVAC modes menu
+            select_attribute: hvac_modes
+            show_arrow: false
+            state_background: false
+
+  # --- Kitchen Pop-up ---
+  - type: vertical-stack
+    cards:
+      - type: custom:bubble-card
+        card_type: pop-up
+        hash: '#kitchen'
+        icon: mdi:heat-wave
+        name: Kitchen Radiator
+        auto-close: 10000
+      - type: custom:bubble-card
+        card_type: climate
+        entity: climate.kitchen_thermostat
+        name: Kitchen
+        icon: mdi:thermometer
+        show_state: true
+        show_name: true
+        show_icon: true
+        hide_target_temp_low: true
+        hide_target_temp_high: true
+        step: 0.5
+        min_temp: 5
+        max_temp: 30
+        styles: |
+          :host {
+            --bubble-climate-background-color: #FFA500;
+          }
+          .is-off {  
+            --bubble-climate-background-color: #FB8C00;
+          }
+        sub_button:
+          - name: HVAC modes menu
+            select_attribute: hvac_modes
+            show_arrow: false
+            state_background: false
+
+  # --- Rosa Pop-up ---
+  - type: vertical-stack
+    cards:
+      - type: custom:bubble-card
+        card_type: pop-up
+        hash: '#rosa'
+        icon: mdi:heat-wave
+        name: Rosa's Room
+        auto-close: 10000
+      - type: custom:bubble-card
+        card_type: climate
+        entity: climate.rosa_thermostat
+        name: Rosa’s Room
+        icon: mdi:thermometer
+        show_state: true
+        show_name: true
+        show_icon: true
+        hide_target_temp_low: true
+        hide_target_temp_high: true
+        step: 0.5
+        min_temp: 5
+        max_temp: 30
+        styles: |
+          :host {
+            --bubble-climate-background-color: #FFA500;
+          }
+          .is-off {  
+            --bubble-climate-background-color: #FF69B4;
+          }
+        sub_button:
+          - name: HVAC modes menu
+            select_attribute: hvac_modes
+            show_arrow: false
+            state_background: false
+
+  #################################################
+  #                NORMAL UI BELOW                #
+  #################################################
+
+  # --- Back Button ---
+  - type: horizontal-stack
+    cards:
+      - type: custom:button-card
+        icon: mdi:arrow-left
+        show_name: false
+        styles:
+          card:
+            - width: 36px
+            - height: 36px
+            - border-radius: 50%
+            - margin: 4px
+            - background: rgba(45,45,50,0.9)
+        tap_action:
+          action: navigate
+          navigation_path: /dashboard-custom/home
+
+  - type: custom:bubble-card
+    card_type: separator
+    name: Heating Control - Select icon for more
+    icon: mdi:radiator
+        
+  # --- Nest Main Control ---
+  - type: custom:bubble-card
+    card_type: climate
+    entity: climate.living_room
+    name: Nest
+    icon: mdi:thermostat
+    show_state: true
+    show_name: true
+    show_icon: true
+    hide_target_temp_low: true
+    hide_target_temp_high: true
+    step: 0.5
+    min_temp: 5
+    max_temp: 30
+    styles: |
+      :host {
+        --bubble-climate-background-color: #FFA500;
+      }
+      .is-off {  
+        --bubble-climate-background-color: #4285F4;
+      }
+    sub_button:
+      - name: HVAC modes menu
+        select_attribute: hvac_modes
+        show_arrow: false
+        state_background: false
+                 
+  # --- Main Content Stack ---
+  - type: vertical-stack
+    cards:
+      # Temperature & Humidity Graph
+      - type: custom:mini-graph-card
+        name: Temperature & Humidity
+        animate: true
+        hours_to_show: 24
+        points_per_hour: 6
+        line_width: 2
+        show:
+          legend: true
+        entities:
+          - entity: sensor.living_room_temperature
+            name: Living Room Temp
+            color: '#FF0000'
+          - entity: sensor.living_room_humidity
+            name: Living Room Humidity
+            color: '#4285F4'
+            y_axis: secondary
+          - entity: sensor.temp_sensor_temperature
+            name: Rosa Temp
+            color: '#F28500'
+          - entity: sensor.temp_sensor_humidity
+            name: Rosa Humidity
+            color: '#00FFFF'
+            y_axis: secondary
+        style: |
+          ha-card {
+            width: 100% !important;
+            max-width: none !important;
+          }
+
+      # Dehumidifier Button
+      - type: custom:bubble-card
+        card_type: button
+        button_type: state
+        entity: humidifier.dehumidifier_control
+        name: Dehumidifier
+        icon: mdi:air-humidifier
+        show_state: true
+        sub_button:
+          - entity: humidifier.dehumidifier_control
+            icon: mdi:power
+            show_background: true
+            tap_action:
+              action: toggle
+        styles: |
+          .bubble-button-card-container {
+            background: rgba(40, 40, 40, 0.9) !important;
+          }
+          .bubble-name, .bubble-state {
+            color: #ffffff !important;
+          }
+
+      # Multi-Room Heating Status Card
+      - type: custom:button-card
+        entity: climate.living_room
+        name: Heating
+        icon: mdi:fire
+        tap_action:
+          action: call-service
+          service: script.toggle_heating
+        show_icon: true
+        show_state: false
+        show_label: true
+        label: >
+          [[[
+            const entities = [
+              { name: "Nest", id: "climate.living_room" },
+              { name: "Living", id: "climate.living_room_thermostat" },
+              { name: "Nala's Room", id: "climate.nala_thermostat" },
+              { name: "Rosa's Room", id: "climate.rosa_thermostat" },
+              { name: "Bedroom", id: "climate.bedroom_stat" },
+              { name: "Kitchen", id: "climate.kitchen_thermostat" }
+            ];
+            let label = '';
+            entities.forEach(e => {
+              const s = states[e.id];
+              if (!s) return;
+              const current = s.attributes.current_temperature ?? '-';
+              const target = s.attributes.target_temperature ?? s.attributes.temperature ?? '-';
+              label += `<b>${e.name}:</b> ${current}°C → ${target}°C<br>`;
+            });
+            return label;
+          ]]]
+        state:
+          - operator: template
+            value: >
+              [[[
+                const current = states['climate.living_room']?.attributes?.current_temperature ?? 0;
+                const target = states['climate.living_room']?.attributes?.temperature ?? 0;
+                return target > current + 0.5;
+              ]]]
+            name: Heating On
+            icon: mdi:fire
+            color: red
+          - operator: default
+            name: Heating Off
+            icon: mdi:fire-off
+            color: gray
+        styles:
+          card:
+            - font-size: 15px
+            - white-space: normal
+            - text-align: left
+            - padding: 12px
+            - border-radius: 16px
+            - box-shadow: 0 4px 8px rgba(0,0,0,0.4)
+            - background: rgba(35,35,40,0.9)
+            - transition: all 0.3s ease
+          icon:
+            - width: 42px
+            - height: 42px
+     
+  # --- Room Navigation ---
+  - type: custom:bubble-card
+    card_type: horizontal-buttons-stack
+    highlight_current_view: true
+    1_link: '#livingroom'
+    2_link: '#bedroom'
+    3_link: '#kitchen'
+    4_link: '#nala'
+    5_link: '#rosa'
+    1_icon: mdi:sofa
+    2_icon: mdi:bed
+    3_icon: mdi:stove
+    4_icon: mdi:gamepad
+    5_icon: mdi:flower

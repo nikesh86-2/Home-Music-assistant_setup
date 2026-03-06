@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "minor_version": 1,
+  "key": "person",
+  "data": {
+    "items": [
+      {
+        "id": "homeassistant",
+        "name": "homeassistant",
+        "user_id": "bc2c2a6a4a994aaebec3dc1755125242",
+        "device_trackers": []
+      }
+    ]
+  }
+}

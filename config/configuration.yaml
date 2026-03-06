@@ -1,0 +1,79 @@
+# Loads default set of integrations. Do not remove.
+default_config:
+
+lovelace:
+  mode: yaml
+  resources:
+    - url: /hacsfiles/weather-chart-card/weather-chart-card.js
+    - type: module
+    - url: /hacsfiles/light-entity-card/light-entity-card.js
+      type: module
+    - url: /hacsfiles/Bubble-Card/bubble-card.js
+      type: module
+    - url: /hacsfiles/button-card/button-card.js
+      type: module
+    - url: /hacsfiles/mini-graph-card/mini-graph-card-bundle.js
+      type: module
+    - url: /hacsfiles/lovelace-mushroom/mushroom.js
+      type: module
+    - url: /hacsfiles/clock-weather-card/clock-weather-card.js
+      type: module
+    - url: /hacsfiles/kiosk-mode/kiosk-mode.js
+      type: module
+    - url: /hacsfiles/lovelace-layout-card/layout-card.js
+      type: module
+    - url: https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap
+      type: css
+    - url: /hacsfiles/lovelace-card-mod/card-mod.js
+      type: module
+    - url: /hacsfiles/lovelace-slider-entity-row/slider-entity-row.js
+      type: module
+    - url: /hacsfiles/mass-player-card/mass-player-card.js
+      type: module
+            
+  dashboards:
+    dashboard-custom:
+      mode: yaml
+      title: "Dashboard Custom"
+      icon: mdi:home
+      show_in_sidebar: true
+      filename: dashboards/dashboard-custom/main.yaml
+
+#browser_mod:
+# Load frontend themes from the themes folder
+frontend:
+  themes: !include_dir_merge_named themes
+  #default_theme: "Google Home Soft"
+
+#zeroconf: 
+#  default_interface: true
+
+#logger:
+#  default: warning
+#  logs:
+#    aiohttp.access: critical
+#    homeassistant.components.http: warning
+#    homeassistant.components.websocket_api: error
+
+http:
+  use_x_forwarded_for: true
+  trusted_proxies:
+    - 172.16.0.0/12  # Covers the entire Docker bridge network
+   # - 172.17.0.0/16
+   # - 172.20.0.0/16
+    - 192.168.0.249
+    - 127.0.0.1      # Localhost
+   # - ::1            # IPv6 Localhost
+  ip_ban_enabled: true
+  login_attempts_threshold: 3
+
+# Includes
+automation: !include automations.yaml
+script: !include scripts.yaml
+scene: !include scenes.yaml
+light: !include masterlights.yaml        # Create this file
+switch: !include switches.yaml      # Create this file
+template: !include templates.yaml  # Create this file
+
+# Keep the legacy groups for non-light/switch entities (like climate)
+group: !include groups.yaml        # Create this file

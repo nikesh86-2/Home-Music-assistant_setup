@@ -1,0 +1,68 @@
+- platform: group
+  name: "all lights"
+  unique_id: all_light_group_001 
+  entities:
+    - light.summer
+    - light.donna
+    - light.living_room_strip_2
+    - light.living_room_strip_1
+    - light.largest
+    - light.smallest
+    - light.kitchen
+    - light.little
+    - light.bind
+    - light.rosa
+    - light.landing
+    - light.stairs
+    - light.large
+    - light.bathroom
+
+- platform: group
+  name: "Living Room Lights"
+  unique_id: living_light_group_001 
+  entities:
+    - light.summer
+    - light.donna
+    - light.living_room_strip_2
+    - light.living_room_strip_1
+
+- platform: group
+  name: "Bedroom Light"
+  unique_id: bedroom_light_group_001
+  entities:
+    - light.largest
+    - light.smallest
+
+- platform: group
+  name: "Kitchen Light"
+  unique_id: kitchen_light_group_001
+  entities:
+    - light.kitchen
+
+- platform: group
+  name: "Nala's Room Lights"
+  unique_id: nala_light_group_001  
+  entities:
+    - light.little
+    - light.bind
+
+- platform: group
+  name: "Rosa's Room Lights"
+  unique_id: rosa_light_group_001  
+  entities:
+    - light.rosa
+
+- platform: group
+  name: "Stairway Lights"
+  unique_id: stairs_light_group_001
+
+  entities:
+    - light.landing
+    - light.stairs
+    - light.large
+
+- platform: group
+  name: "Bathroom Light"
+  unique_id: bathroom_light_group_001 
+  entities:
+    - light.bathroom

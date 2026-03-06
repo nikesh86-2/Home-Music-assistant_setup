@@ -1,0 +1,17 @@
+all_climate:
+  name: all radiators
+  entities:
+    - climate.living_room
+    - climate.rosa_thermostat
+    - climate.kitchen_thermostat
+    - climate.living_room_thermostat
+    - climate.nala_thermostat
+    - climate.bedroom_stat
+
+all_media:
+  name: all speakers
+  entities:
+    - media_player.nalas_room_speaker_2
+    - media_player.kitchen_speaker_2
+    - media_player.bedroom_speaker_2
+    - media_player.living_room_display_2

@@ -1,0 +1,215 @@
+{
+  "server_id": "f23e3b69d87b4b2990acb7a3b3faefde",
+  "providers": {
+    "lrclib": {
+      "values": {},
+      "type": "metadata",
+      "domain": "lrclib",
+      "instance_id": "lrclib",
+      "enabled": true,
+      "name": "LRCLIB",
+      "last_error": null
+    },
+    "musicbrainz": {
+      "values": {},
+      "type": "metadata",
+      "domain": "musicbrainz",
+      "instance_id": "musicbrainz",
+      "enabled": true,
+      "name": "MusicBrainz",
+      "last_error": null
+    },
+    "builtin": {
+      "values": {},
+      "type": "music",
+      "domain": "builtin",
+      "instance_id": "builtin",
+      "enabled": true,
+      "name": "Music Assistant",
+      "last_error": null
+    },
+    "fanarttv": {
+      "values": {},
+      "type": "metadata",
+      "domain": "fanarttv",
+      "instance_id": "fanarttv",
+      "enabled": true,
+      "name": "fanart.tv",
+      "last_error": null
+    },
+    "theaudiodb": {
+      "values": {},
+      "type": "metadata",
+      "domain": "theaudiodb",
+      "instance_id": "theaudiodb",
+      "enabled": true,
+      "name": "The Audio DB",
+      "last_error": null
+    },
+    "sendspin": {
+      "values": {},
+      "type": "player",
+      "domain": "sendspin",
+      "instance_id": "sendspin",
+      "enabled": true,
+      "name": "Sendspin",
+      "last_error": null
+    },
+    "filesystem_local--spJkP3gk": {
+      "values": {
+        "path": "/music"
+      },
+      "type": "music",
+      "domain": "filesystem_local",
+      "instance_id": "filesystem_local--spJkP3gk",
+      "enabled": true,
+      "name": null,
+      "last_error": null
+    },
+    "chromecast": {
+      "values": {},
+      "type": "player",
+      "domain": "chromecast",
+      "instance_id": "chromecast",
+      "enabled": true,
+      "name": null,
+      "last_error": null
+    }
+  },
+  "core": {
+    "metadata": {
+      "values": {
+        "language": "en_GB"
+      },
+      "domain": "metadata",
+      "last_error": null
+    },
+    "music": {
+      "values": {
+        "deleted_providers": []
+      },
+      "domain": "music",
+      "last_error": null
+    }
+  },
+  "players": {
+    "ma_fdfi331je2": {
+      "values": {},
+      "provider": "sendspin",
+      "player_id": "ma_fdfi331je2",
+      "enabled": true,
+      "name": null,
+      "available": true,
+      "default_name": "Web (Chrome on Linux)"
+    },
+    "cba7f4ff-88b6-1599-f5f7-720a6e32dde6": {
+      "values": {},
+      "provider": "chromecast",
+      "player_id": "cba7f4ff-88b6-1599-f5f7-720a6e32dde6",
+      "enabled": true,
+      "name": null,
+      "available": true,
+      "default_name": "Kitchen speaker"
+    },
+    "63530da5-8dc0-457c-b337-c63852208a5d": {
+      "values": {},
+      "provider": "chromecast",
+      "player_id": "63530da5-8dc0-457c-b337-c63852208a5d",
+      "enabled": true,
+      "name": null,
+      "available": true,
+      "default_name": "down stairs"
+    },
+    "e4e41e41-0080-a70d-5293-4ff14a4b0f1e": {
+      "values": {},
+      "provider": "chromecast",
+      "player_id": "e4e41e41-0080-a70d-5293-4ff14a4b0f1e",
+      "enabled": true,
+      "name": null,
+      "available": true,
+      "default_name": "Nalas Room speaker"
+    },
+    "ma_v67vzkwej9": {
+      "values": {},
+      "provider": "sendspin",
+      "player_id": "ma_v67vzkwej9",
+      "enabled": true,
+      "name": null,
+      "available": true,
+      "default_name": "Web (Chrome on Android)"
+    },
+    "ma_0yxfdub1dz": {
+      "values": {},
+      "provider": "sendspin",
+      "player_id": "ma_0yxfdub1dz",
+      "enabled": true,
+      "name": null,
+      "available": true,
+      "default_name": "Web (Chrome on Linux)"
+    },
+    "ma_13qw7f73zc": {
+      "values": {},
+      "provider": "sendspin",
+      "player_id": "ma_13qw7f73zc",
+      "enabled": true,
+      "name": null,
+      "available": true,
+      "default_name": "Web (Chrome on Linux)"
+    },
+    "ma_rwydvbgvvo": {
+      "values": {},
+      "provider": "sendspin",
+      "player_id": "ma_rwydvbgvvo",
+      "enabled": true,
+      "name": null,
+      "available": true,
+      "default_name": "Web (Chrome on Linux)"
+    },
+    "ma_bglqxay349": {
+      "values": {},
+      "provider": "sendspin",
+      "player_id": "ma_bglqxay349",
+      "enabled": true,
+      "name": null,
+      "available": true,
+      "default_name": "Web (Chrome on Android)"
+    },
+    "c4964fa2-7485-4928-da88-325d53e449a8": {
+      "values": {},
+      "provider": "chromecast",
+      "player_id": "c4964fa2-7485-4928-da88-325d53e449a8",
+      "enabled": true,
+      "name": null,
+      "available": true,
+      "default_name": "Smart TV Pro"
+    },
+    "ma_9w7mlne51v": {
+      "values": {},
+      "provider": "sendspin",
+      "player_id": "ma_9w7mlne51v",
+      "enabled": true,
+      "name": null,
+      "available": true,
+      "default_name": "PWA (Chrome on JMS-W09)"
+    },
+    "e514a7a2-d4e3-eac0-8a35-27629d55cca1": {
+      "values": {},
+      "provider": "chromecast",
+      "player_id": "e514a7a2-d4e3-eac0-8a35-27629d55cca1",
+      "enabled": true,
+      "name": null,
+      "available": true,
+      "default_name": "Bedroom speaker"
+    },
+    "d5b32fc1-ba07-5bf5-b0c4-995a2b39f46b": {
+      "values": {},
+      "provider": "chromecast",
+      "player_id": "d5b32fc1-ba07-5bf5-b0c4-995a2b39f46b",
+      "enabled": true,
+      "name": null,
+      "available": true,
+      "default_name": "Living Room display"
+    }
+  },
+  "onboard_done": true
+}

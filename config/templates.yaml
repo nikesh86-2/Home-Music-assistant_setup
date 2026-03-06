@@ -1,0 +1,10 @@
+- sensor:
+    - name: "Dashboard Time"
+      unique_id: dashboard_time
+      state: "{{ now().strftime('%H:%M') }}"
+      icon: mdi:clock-outline
+
+    - name: "Dashboard Date"
+      unique_id: dashboard_date
+      state: "{{ now().strftime('%A, %B %d') }}"
+      icon: mdi:calendar

@@ -1,0 +1,11 @@
+title: Home
+background: black
+theme: Google Home Dark
+
+views:
+ - !include views/home.yaml
+ - !include views/pihole.yaml
+ - !include views/lights.yaml
+ - !include views/radiators.yaml
+ - !include views/media.yaml
+ - !include views/plugs.yaml

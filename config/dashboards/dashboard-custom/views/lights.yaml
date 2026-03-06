@@ -1,0 +1,907 @@
+path: lights
+title: Lights
+theme: "Google Home Dark"
+hide_header: true
+hide_sidebar: true
+
+cards:
+
+  # Ceiling color pop-up
+  - type: vertical-stack
+    cards:
+      - type: custom:bubble-card
+        card_type: pop-up
+        hash: '#ceiling-color'
+        name: Ceiling Color
+        icon: mdi:palette
+        entity: light.largest
+        bg_opacity: 50
+        auto_close: 15000
+      - type: custom:light-entity-card
+        entity: light.largest
+        persist_features: true
+        color_picker: true
+        color_temp: true
+        brightness: true
+
+  # Lamp color pop-up
+  - type: vertical-stack
+    cards:
+      - type: custom:bubble-card
+        card_type: pop-up
+        hash: '#lamp-color'
+        name: Lamp Color
+        icon: mdi:palette
+        entity: light.smallest
+        bg_opacity: 50
+        auto_close: 15000
+      - type: custom:light-entity-card
+        entity: light.smallest
+        persist_features: true
+        color_picker: true
+        color_temp: true
+        
+  # Kitchen Light color pop-up
+  - type: vertical-stack
+    cards:
+      - type: custom:bubble-card
+        card_type: pop-up
+        hash: '#kitchen-light-color'
+        name: Kitchen Light
+        icon: mdi:palette
+        entity: light.kitchen
+        bg_opacity: 50
+        auto_close: 15000
+      - type: custom:light-entity-card
+        entity: light.kitchen
+        persist_features: true
+        color_picker: true
+        color_temp: true
+        
+  # Nala Ceiling color pop-up
+  - type: vertical-stack
+    cards:
+      - type: custom:bubble-card
+        card_type: pop-up
+        hash: '#nala-ceiling-color'
+        name: Ceiling Color
+        icon: mdi:palette
+        entity: light.little
+        bg_opacity: 50
+        auto_close: 15000
+      - type: custom:light-entity-card
+        entity: light.little
+        persist_features: true
+        color_picker: true
+        color_temp: true
+
+  # Nala Lamp color pop-up
+  - type: vertical-stack
+    cards:
+      - type: custom:bubble-card
+        card_type: pop-up
+        hash: '#nala-lamp-color'
+        name: Lamp Color
+        icon: mdi:palette
+        entity: light.bind
+        bg_opacity: 50
+        auto_close: 15000
+      - type: custom:light-entity-card
+        entity: light.bind
+        persist_features: true
+        color_picker: true
+
+  # Rosa Ceiling color pop-up
+  - type: vertical-stack
+    cards:
+      - type: custom:bubble-card
+        card_type: pop-up
+        hash: '#rosa-ceiling-color'
+        name: Ceiling Color
+        icon: mdi:palette
+        entity: light.rosa
+        bg_opacity: 50
+        auto_close: 15000
+      - type: custom:light-entity-card
+        entity: light.rosa
+        persist_features: true
+        color_picker: true
+        color_temp: true
+
+  # Stairway Light color pop-up
+  - type: vertical-stack
+    cards:
+      - type: custom:bubble-card
+        card_type: pop-up
+        hash: '#stairs-light-color'
+        name: Stairway Light
+        icon: mdi:palette
+        entity: light.stairs
+        bg_opacity: 50
+        auto_close: 15000
+      - type: custom:light-entity-card
+        entity: light.stairs
+        persist_features: true
+        color_picker: true
+        color_temp: true
+
+  # Landing Light color pop-up
+  - type: vertical-stack
+    cards:
+      - type: custom:bubble-card
+        card_type: pop-up
+        hash: '#landing-light-color'
+        name: Landing Light
+        icon: mdi:palette
+        entity: light.landing
+        bg_opacity: 50
+        auto_close: 15000
+      - type: custom:light-entity-card
+        entity: light.landing
+        persist_features: true
+        color_picker: true
+        color_temp: true
+
+  # Upper Light color pop-up
+  - type: vertical-stack
+    cards:
+      - type: custom:bubble-card
+        card_type: pop-up
+        hash: '#upper-light-color'
+        name: Upper Light
+        icon: mdi:palette
+        entity: light.large
+        bg_opacity: 50
+        auto_close: 15000
+      - type: custom:light-entity-card
+        entity: light.large
+        persist_features: true
+        color_picker: true
+        
+  # Bathroom Light color pop-up
+  - type: vertical-stack
+    cards:
+      - type: custom:bubble-card
+        card_type: pop-up
+        hash: '#bath-light-color'
+        name: Bathroom Light
+        icon: mdi:palette
+        entity: light.bathroom
+        bg_opacity: 50
+        auto_close: 15000
+      - type: custom:light-entity-card
+        entity: light.bathroom
+        persist_features: true
+        color_picker: true
+        color_temp: true
+
+  # Living Room Lamp pop-up
+  - type: vertical-stack
+    cards:
+      - type: custom:bubble-card
+        card_type: pop-up
+        hash: '#lamp-color'
+        name: Lamp
+        icon: mdi:palette
+        entity: light.summer
+        bg_opacity: 50
+        auto_close: 15000
+      - type: custom:light-entity-card
+        entity: light.summer
+        persist_features: true
+        color_picker: true
+        color_temp: true
+        brightness: true
+
+  # Living Room Ceiling pop-up
+  - type: vertical-stack
+    cards:
+      - type: custom:bubble-card
+        card_type: pop-up
+        hash: '#ceiling-color'
+        name: Ceiling
+        icon: mdi:palette
+        entity: light.donna
+        bg_opacity: 50
+        auto_close: 15000
+      - type: custom:light-entity-card
+        entity: light.donna
+        persist_features: true
+        color_picker: true
+        color_temp: true
+        brightness: true
+
+  # Strip 1 pop-up
+  - type: vertical-stack
+    cards:
+      - type: custom:bubble-card
+        card_type: pop-up
+        hash: '#strip1-controls'
+        name: Strip1 color and effects
+        icon: mdi:palette
+        entity: light.living_room_strip_1
+        bg_opacity: 50
+        auto_close: 15000
+      - type: custom:light-entity-card
+        entity: light.living_room_strip_1
+        persist_features: true
+        color_picker: true
+        color_temp: true
+
+  # Strip 2 pop-up
+  - type: vertical-stack
+    cards:
+      - type: custom:bubble-card
+        card_type: pop-up
+        hash: '#strip2-controls'
+        name: Strip2 color and effects
+        icon: mdi:palette
+        entity: light.living_room_strip_2
+        bg_opacity: 50
+        auto_close: 15000
+      - type: custom:light-entity-card
+        entity: light.living_room_strip_2
+        persist_features: true
+        color_picker: true
+        color_temp: true
+
+  #################################################
+  #                    POP-UPS                   #
+  #################################################
+
+  # --- Living Room Pop-up ---
+  - type: vertical-stack
+    cards:
+      - type: custom:bubble-card
+        card_type: pop-up
+        hash: '#livingroom'
+        icon: mdi:lightbulb-on-outline
+        name: Living Room Lights
+        auto-close: 10000
+
+      - type: custom:bubble-card
+        card_type: button
+        button_type: slider
+        entity: light.summer
+        name: Lamp
+        icon: mdi:floor-lamp
+        show_state: true
+        hold_action:
+          action: navigate
+          navigation_path: '#lamp-color'
+        sub_button:
+          - icon: mdi:palette
+            tap_action:
+              action: navigate
+              navigation_path: '#lamp-color'
+        styles: |
+          :host {
+            --bubble-main-background-color: rgba(35,35,40,0.85);
+            --bubble-button-accent-color: #FB8C00;
+            --bubble-border-radius: 20px;
+            --bubble-card-box-shadow: 0 0 15px 3px rgba(251,140,0,0.4);
+          }
+          .is-on {
+            --bubble-main-background-color: rgba(255,255,255,0.95);
+            --bubble-card-box-shadow: 0 0 20px 5px rgba(251,140,0,0.6);
+          }
+
+      - type: custom:bubble-card
+        card_type: button
+        button_type: slider
+        entity: light.donna
+        name: Ceiling
+        icon: mdi:ceiling-light
+        show_state: true
+        hold_action:
+          action: navigate
+          navigation_path: '#ceiling-color'
+        sub_button:
+          - icon: mdi:palette
+            tap_action:
+              action: navigate
+              navigation_path: '#ceiling-color'
+        styles: |
+          :host {
+            --bubble-main-background-color: rgba(35,35,40,0.85);
+            --bubble-button-accent-color: #EA4335;
+            --bubble-border-radius: 20px;
+            --bubble-card-box-shadow: 0 0 15px 3px rgba(234,67,53,0.4);
+          }
+          .is-on {
+            --bubble-main-background-color: rgba(255,255,255,0.95);
+            --bubble-card-box-shadow: 0 0 20px 5px rgba(234,67,53,0.6);
+          }
+
+      - type: custom:bubble-card
+        card_type: button
+        button_type: slider
+        entity: light.living_room_strip_1
+        name: Strip1
+        icon: mdi:led-strip-variant
+        show_state: true
+        hold_action:
+          action: navigate
+          navigation_path: '#strip1-controls'
+        sub_button:
+          - icon: mdi:palette
+            tap_action:
+              action: navigate
+              navigation_path: '#strip1-controls'
+        styles: |
+          :host {
+            --bubble-main-background-color: rgba(35,35,40,0.85);
+            --bubble-button-accent-color: #4285F4;
+            --bubble-border-radius: 20px;
+            --bubble-card-box-shadow: 0 0 15px 3px rgba(66,133,244,0.4);
+          }
+          .is-on {
+            --bubble-main-background-color: rgba(255,255,255,0.95);
+            --bubble-card-box-shadow: 0 0 20px 5px rgba(66,133,244,0.6);
+          }
+
+      - type: custom:bubble-card
+        card_type: button
+        button_type: slider
+        entity: light.living_room_strip_2
+        name: Strip2
+        icon: mdi:led-strip-variant
+        show_state: true
+        hold_action:
+          action: navigate
+          navigation_path: '#strip2-controls'
+        sub_button:
+          - icon: mdi:palette
+            tap_action:
+              action: navigate
+              navigation_path: '#strip2-controls'
+        styles: |
+          :host {
+            --bubble-main-background-color: rgba(35,35,40,0.85);
+            --bubble-button-accent-color: #34A853;
+            --bubble-border-radius: 20px;
+            --bubble-card-box-shadow: 0 0 15px 3px rgba(52,168,83,0.4);
+          }
+          .is-on {
+            --bubble-main-background-color: rgba(255,255,255,0.95);
+            --bubble-card-box-shadow: 0 0 20px 5px rgba(52,168,83,0.6);
+          }
+
+  # --- Bedroom Pop-up ---
+  - type: vertical-stack
+    cards:
+      - type: custom:bubble-card
+        card_type: pop-up
+        hash: '#bedroom'
+        name: Bedroom Lights
+        icon: mdi:lightbulb-on-outline
+        auto-close: 10000
+        
+      - type: custom:bubble-card
+        card_type: button
+        button_type: slider
+        entity: light.largest
+        name: Ceiling
+        icon: mdi:ceiling-light
+        show_state: true
+        hold_action:
+          action: navigate
+          navigation_path: '#ceiling-color'
+        sub_button:
+          - icon: mdi:palette
+            tap_action:
+              action: navigate
+              navigation_path: '#ceiling-color'
+        styles: |
+          :host {
+            --bubble-main-background-color: rgba(35,35,40,0.85);
+            --bubble-button-accent-color: #EA4335;
+            --bubble-border-radius: 20px;
+            --bubble-card-box-shadow: 0 0 15px 3px rgba(234,67,53,0.4);
+          }
+          .is-on {
+            --bubble-main-background-color: rgba(255,255,255,0.95);
+            --bubble-card-box-shadow: 0 0 20px 5px rgba(234,67,53,0.6);
+          }
+
+      - type: custom:bubble-card
+        card_type: button
+        button_type: slider
+        entity: light.smallest
+        name: Lamp
+        icon: mdi:floor-lamp
+        show_state: true
+        hold_action:
+          action: navigate
+          navigation_path: '#lamp-color'
+        sub_button:
+          - icon: mdi:palette
+            tap_action:
+              action: navigate
+              navigation_path: '#lamp-color'
+        styles: |
+          :host {
+            --bubble-main-background-color: rgba(35,35,40,0.85);
+            --bubble-button-accent-color: #FB8C00;
+            --bubble-border-radius: 20px;
+            --bubble-card-box-shadow: 0 0 15px 3px rgba(251,140,0,0.4);
+          }
+          .is-on {
+            --bubble-main-background-color: rgba(255,255,255,0.95);
+            --bubble-card-box-shadow: 0 0 20px 5px rgba(251,140,0,0.6);
+          }
+
+  # --- Kitchen Pop-up ---
+  - type: vertical-stack
+    cards:
+      - type: custom:bubble-card
+        card_type: pop-up
+        hash: '#kitchen'
+        icon: mdi:lightbulb-on-outline
+        name: Kitchen Lights
+        auto-close: 10000
+
+      - type: custom:bubble-card
+        card_type: button
+        button_type: slider
+        entity: light.kitchen
+        name: Kitchen Light
+        icon: mdi:ceiling-light
+        show_state: true
+        hold_action:
+          action: navigate
+          navigation_path: '#kitchen-light-color'
+        sub_button:
+          - icon: mdi:palette
+            tap_action:
+              action: navigate
+              navigation_path: '#kitchen-light-color'
+        styles: |
+          :host {
+            --bubble-main-background-color: rgba(35,35,40,0.85);
+            --bubble-button-accent-color: #FB8C00;
+            --bubble-border-radius: 20px;
+            --bubble-card-box-shadow: 0 0 15px 3px rgba(251,140,0,0.4);
+          }
+          .is-on {
+            --bubble-main-background-color: rgba(255,255,255,0.95);
+            --bubble-card-box-shadow: 0 0 20px 5px rgba(251,140,0,0.6);
+          }
+
+  # --- Nala’s Room Pop-up ---
+  - type: vertical-stack
+    cards:
+      - type: custom:bubble-card
+        card_type: pop-up
+        hash: '#nala'
+        name: Nala’s Lights
+        auto-close: 10000
+        icon: mdi:lightbulb-on-outline
+
+      - type: custom:bubble-card
+        card_type: button
+        button_type: slider
+        entity: light.little
+        name: Ceiling
+        icon: mdi:ceiling-light
+        show_state: true
+        hold_action:
+          action: navigate
+          navigation_path: '#nala-ceiling-color'
+        sub_button:
+          - icon: mdi:palette
+            tap_action:
+              action: navigate
+              navigation_path: '#nala-ceiling-color'
+        styles: |
+          :host {
+            --bubble-main-background-color: rgba(35,35,40,0.85);
+            --bubble-button-accent-color: #FB8C00;
+            --bubble-border-radius: 20px;
+            --bubble-card-box-shadow: 0 0 15px 3px rgba(251,140,0,0.4);
+          }
+          .is-on {
+            --bubble-main-background-color: rgba(255,255,255,0.95);
+            --bubble-card-box-shadow: 0 0 20px 5px rgba(251,140,0,0.6);
+          }
+
+      - type: custom:bubble-card
+        card_type: button
+        button_type: slider
+        entity: light.bind
+        name: Lamp
+        icon: mdi:lamp
+        show_state: true
+        hold_action:
+          action: navigate
+          navigation_path: '#nala-lamp-color'
+        sub_button:
+          - icon: mdi:palette
+            tap_action:
+              action: navigate
+              navigation_path: '#nala-lamp-color'
+        styles: |
+          :host {
+            --bubble-main-background-color: rgba(35,35,40,0.85);
+            --bubble-button-accent-color: #FB8C00;
+            --bubble-border-radius: 20px;
+            --bubble-card-box-shadow: 0 0 15px 3px rgba(251,140,0,0.4);
+          }
+          .is-on {
+            --bubble-main-background-color: rgba(255,255,255,0.95);
+            --bubble-card-box-shadow: 0 0 20px 5px rgba(251,140,0,0.6);
+          }
+
+  # --- Rosa’s Room Pop-up ---
+  - type: vertical-stack
+    cards:
+      - type: custom:bubble-card
+        card_type: pop-up
+        hash: '#rosa'
+        name: Rosa’s Lights
+        icon: mdi:lightbulb-on-outline
+        auto-close: 10000
+
+      - type: custom:bubble-card
+        card_type: button
+        button_type: slider
+        entity: light.rosa
+        name: Ceiling
+        icon: mdi:ceiling-light
+        show_state: true
+        hold_action:
+          action: navigate
+          navigation_path: '#rosa-ceiling-color'
+        sub_button:
+          - icon: mdi:palette
+            tap_action:
+              action: navigate
+              navigation_path: '#rosa-ceiling-color'
+        styles: |
+          :host {
+            --bubble-main-background-color: rgba(35,35,40,0.85);
+            --bubble-button-accent-color: #FB8C00;
+            --bubble-border-radius: 20px;
+            --bubble-card-box-shadow: 0 0 15px 3px rgba(251,140,0,0.4);
+          }
+          .is-on {
+            --bubble-main-background-color: rgba(255,255,255,0.95);
+            --bubble-card-box-shadow: 0 0 20px 5px rgba(251,140,0,0.6);
+          }
+          
+  # --- Bathroom Pop-up ---
+  - type: vertical-stack
+    cards:
+      - type: custom:bubble-card
+        card_type: pop-up
+        icon: mdi:lightbulb-on-outline
+        hash: '#bathroom'
+        name: Bathroom Lights
+        auto-close: 10000
+        
+      - type: custom:bubble-card
+        card_type: button
+        button_type: slider
+        entity: light.bathroom
+        name: Bathroom Light
+        icon: mdi:ceiling-light
+        show_state: true
+        hold_action:
+          action: navigate
+          navigation_path: '#bath-light-color'
+        sub_button:
+          - icon: mdi:palette
+            tap_action:
+              action: navigate
+              navigation_path: '#bath-light-color'
+        styles: |
+          :host {
+            --bubble-main-background-color: rgba(35,35,40,0.85);
+            --bubble-button-accent-color: #FB8C00;
+            --bubble-border-radius: 20px;
+            --bubble-card-box-shadow: 0 0 15px 3px rgba(251,140,0,0.4);
+          }
+          .is-on {
+            --bubble-main-background-color: rgba(255,255,255,0.95);
+            --bubble-card-box-shadow: 0 0 20px 5px rgba(251,140,0,0.6);
+          }
+
+  # --- Stairway Pop-up ---
+  - type: vertical-stack
+    cards:
+      - type: custom:bubble-card
+        card_type: pop-up
+        icon: mdi:lightbulb-on-outline
+        hash: '#stairs'
+        name: Stair Lights
+        auto-close: 10000
+
+      - type: custom:bubble-card
+        card_type: button
+        button_type: slider
+        entity: light.stairs
+        name: Stairway Light
+        icon: mdi:stairs
+        show_state: true
+        hold_action:
+          action: navigate
+          navigation_path: '#stairs-light-color'
+        sub_button:
+          - icon: mdi:palette
+            tap_action:
+              action: navigate
+              navigation_path: '#stairs-light-color'
+        styles: |
+          :host {
+            --bubble-main-background-color: rgba(35,35,40,0.85);
+            --bubble-button-accent-color: #FB8C00;
+            --bubble-border-radius: 20px;
+            --bubble-card-box-shadow: 0 0 15px 3px rgba(251,140,0,0.4);
+          }
+          .is-on {
+            --bubble-main-background-color: rgba(255,255,255,0.95);
+            --bubble-card-box-shadow: 0 0 20px 5px rgba(251,140,0,0.6);
+          }
+
+      - type: custom:bubble-card
+        card_type: button
+        button_type: slider
+        entity: light.landing
+        name: Landing Light
+        icon: mdi:stairs-up
+        show_state: true
+        hold_action:
+          action: navigate
+          navigation_path: '#landing-light-color'
+        sub_button:
+          - icon: mdi:palette
+            tap_action:
+              action: navigate
+              navigation_path: '#landing-light-color'
+        styles: |
+          :host {
+            --bubble-main-background-color: rgba(35,35,40,0.85);
+            --bubble-button-accent-color: #FB8C00;
+            --bubble-border-radius: 20px;
+            --bubble-card-box-shadow: 0 0 15px 3px rgba(251,140,0,0.4);
+          }
+          .is-on {
+            --bubble-main-background-color: rgba(255,255,255,0.95);
+            --bubble-card-box-shadow: 0 0 20px 5px rgba(251,140,0,0.6);
+          }
+
+      - type: custom:bubble-card
+        card_type: button
+        button_type: slider
+        entity: light.large
+        name: Upper Light
+        icon: mdi:ceiling-light
+        show_state: true
+        hold_action:
+          action: navigate
+          navigation_path: '#upper-light-color'
+        sub_button:
+          - icon: mdi:palette
+            tap_action:
+              action: navigate
+              navigation_path: '#upper-light-color'
+        styles: |
+          :host {
+            --bubble-main-background-color: rgba(35,35,40,0.85);
+            --bubble-button-accent-color: #FB8C00;
+            --bubble-border-radius: 20px;
+            --bubble-card-box-shadow: 0 0 15px 3px rgba(251,140,0,0.4);
+          }
+          .is-on {
+            --bubble-main-background-color: rgba(255,255,255,0.95);
+            --bubble-card-box-shadow: 0 0 20px 5px rgba(251,140,0,0.6);
+          }
+
+
+  #################################################
+  #                NORMAL UI BELOW                #
+  #################################################
+
+  # --- Back Button ---
+  - type: horizontal-stack
+    cards:
+      - type: custom:button-card
+        icon: mdi:arrow-left
+        show_name: false
+        styles:
+          card:
+            - width: 36px
+            - height: 36px
+            - border-radius: 50%
+            - margin: 4px
+            - background: rgba(45,45,50,0.9)
+        tap_action:
+          action: navigate
+          navigation_path: /dashboard-custom/home
+ 
+         
+  # ===== Light Groups =====
+  - type: custom:bubble-card
+    card_type: separator
+    name: Light Groups - Select icon for more
+    icon: mdi:lightbulb-multiple
+ 
+  - type: custom:bubble-card
+    card_type: button
+    button_type: switch
+    entity: light.all_lights  
+    name: All Lights
+    icon: mdi:lightbulb-multiple
+    show_state: false
+    show_name: true
+    styles: |
+      :host {
+        --bubble-main-background-color: rgba(35,35,40,0.85);
+        --bubble-button-accent-color: #87CEEB;
+        --bubble-border-radius: 20px;
+        --bubble-card-box-shadow: 0 0 15px 3px rgba(135,206,235,0.4);
+      }
+      .is-on {
+        --bubble-main-background-color: rgba(255,255,255,0.95);
+        --bubble-card-box-shadow: 0 0 20px 5px rgba(135,206,235,0.6);
+      }
+ 
+  - type: custom:bubble-card
+    card_type: button
+    button_type: switch
+    entity: light.living_room_lights  # CORRECTED
+    icon: mdi:lightbulb-multiple
+    show_state: false
+    show_name: true
+    styles: |
+      :host {
+        --bubble-main-background-color: rgba(35,35,40,0.85);
+        --bubble-button-accent-color: #4285F4;
+        --bubble-border-radius: 20px;
+        --bubble-card-box-shadow: 0 0 15px 3px rgba(66,133,244,0.4);
+      }
+      .is-on {
+        --bubble-main-background-color: rgba(255,255,255,0.95);
+        --bubble-card-box-shadow: 0 0 20px 5px rgba(66,133,244,0.6);
+        --bubble-icon-color: #4285F4;
+      }
+      
+  - type: custom:bubble-card
+    card_type: button
+    button_type: switch
+    entity: light.rosa_s_room_lights 
+    icon: mdi:lightbulb-multiple
+    show_state: false
+    show_name: true
+    styles: |
+      :host {
+        --bubble-main-background-color: rgba(35,35,40,0.85);
+        --bubble-button-accent-color: #FF69B4;
+        --bubble-border-radius: 20px;
+        --bubble-card-box-shadow: 0 0 15px 3px rgba(255,105,180,0.4);
+      }
+      .is-on {
+        --bubble-main-background-color: rgba(255,255,255,0.95);
+        --bubble-card-box-shadow: 0 0 20px 5px rgba(255,105,180,0.6);
+        --bubble-icon-color: #FF69B4;
+      }
+ 
+  - type: custom:bubble-card
+    card_type: button
+    button_type: switch
+    entity: light.stairway_lights 
+    icon: mdi:lightbulb-multiple
+    show_state: false
+    show_name: true
+    styles: |
+      :host {
+        --bubble-main-background-color: rgba(35,35,40,0.85);
+        --bubble-button-accent-color: #34A853;
+        --bubble-border-radius: 20px;
+        --bubble-card-box-shadow: 0 0 15px 3px rgba(52,168,83,0.4);
+      }
+      .is-on {
+        --bubble-main-background-color: rgba(255,255,255,0.95);
+        --bubble-card-box-shadow: 0 0 20px 5px rgba(52,168,83,0.6);
+        --bubble-icon-color: #34A853;
+      }
+ 
+  - type: custom:bubble-card
+    card_type: button
+    button_type: switch
+    hash: '#nala'
+    entity: light.nala_s_room_lights 
+    icon: mdi:lightbulb-multiple
+    show_state: false
+    show_name: true
+    styles: |
+      :host {
+        --bubble-main-background-color: rgba(35,35,40,0.85);
+        --bubble-button-accent-color: #9C27B0;
+        --bubble-border-radius: 20px;
+        --bubble-card-box-shadow: 0 0 15px 3px rgba(156,39,176,0.4);
+      }
+      .is-on {
+        --bubble-main-background-color: rgba(255,255,255,0.95);
+        --bubble-card-box-shadow: 0 0 20px 5px rgba(156,39,176,0.6);
+        --bubble-icon-color: #9C27B0;
+      }
+      
+  - type: custom:bubble-card
+    card_type: button
+    button_type: switch
+    entity: light.bathroom_light 
+    icon: mdi:lightbulb-multiple
+    show_state: false
+    show_name: true
+    styles: |
+      :host {
+        --bubble-main-background-color: rgba(35,35,40,0.85);
+        --bubble-button-accent-color: #303F9F;
+        --bubble-border-radius: 20px;
+        --bubble-card-box-shadow: 0 0 15px 3px rgba(48,63,159,0.4);
+      }
+      .is-on {
+        --bubble-main-background-color: rgba(255,255,255,0.95);
+        --bubble-card-box-shadow: 0 0 20px 5px rgba(48,63,159,0.6);
+        --bubble-icon-color: #303F9F;
+      } 
+ 
+  - type: custom:bubble-card
+    card_type: button
+    button_type: switch
+    entity: light.kitchen_light_group 
+    icon: mdi:lightbulb-multiple
+    show_state: false
+    show_name: true
+    styles: |
+      :host {
+        --bubble-main-background-color: rgba(35,35,40,0.85);
+        --bubble-button-accent-color: #EA4335;
+        --bubble-border-radius: 20px;
+        --bubble-card-box-shadow: 0 0 15px 3px rgba(234,67,53,0.4);
+      }
+      .is-on {
+        --bubble-main-background-color: rgba(255,255,255,0.95);
+        --bubble-card-box-shadow: 0 0 20px 5px rgba(234,67,53,0.6);
+        --bubble-icon-color: #EA4335;
+      }
+      
+  - type: custom:bubble-card
+    card_type: button
+    button_type: switch
+    entity: light.bedroom_light_group 
+    icon: mdi:lightbulb-multiple
+    show_state: false
+    show_name: true
+    styles: |
+      :host {
+        --bubble-main-background-color: rgba(35,35,40,0.85);
+        --bubble-button-accent-color: #EA4335;
+        --bubble-border-radius: 20px;
+        --bubble-card-box-shadow: 0 0 15px 3px rgba(234,67,53,0.4);
+      }
+      .is-on {
+        --bubble-main-background-color: rgba(255,255,255,0.95);
+        --bubble-card-box-shadow: 0 0 20px 5px rgba(234,67,53,0.6);
+        --bubble-icon-color: #EA4335;
+      }
+      
+  # --- Room Navigation ---
+  - type: custom:bubble-card
+    card_type: horizontal-buttons-stack
+    highlight_current_view: true
+    1_link: '#livingroom'
+    2_link: '#stairs'
+    3_link: '#bedroom'
+    4_link: '#kitchen'
+    5_link: '#nala'
+    6_link: '#rosa'
+    7_link: '#bathroom'
+    1_icon: mdi:sofa
+    2_icon: mdi:stairs
+    3_icon: mdi:bed
+    4_icon: mdi:stove
+    5_icon: mdi:gamepad
+    6_icon: mdi:flower
+    7_icon: mdi:shower
