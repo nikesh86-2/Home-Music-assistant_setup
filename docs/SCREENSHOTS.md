@@ -1,19 +1,19 @@
 # Project Screenshots
 
 ### Main Dashboard (Mobile Optimized)
-![Mobile Dashboard](../docs/Home.png)
+![Mobile Dashboard](./screenshots/Home.png)
 
 ### Lights 
-![Lights UI](../docs/lights.png)
+![Lights UI](./screenshots/lights.png)
 
 ### Home Assistant Heating System
-![Heating UI](../docs/climate.png)
+![Heating UI](./screenshots/climate.png)
 
 ### Pihole Dashboard
-![Pihole UI](../docs/pihole.png)
+![Pihole UI](./screenshots/pihole.png)
 
 ### Home Assistant Sample popups
-![Dash popup](../docs/popup.png)
+![Dash popup](./screenshots/popup.png)
 
 ### Profile Page - edited for privacy 
-![Profile Page](../docs/Heavily_edited_profile.png)
+![Profile Page](./screenshots/Heavily_edited_profile.png)
