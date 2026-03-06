@@ -52,11 +52,11 @@ Low Latency: Music Assistant requires direct network access to prevent jitter.
 
 ## Project Structure
 
-###.
-###---- config/                 # Home Assistant core configuration
-###| | ----- custom_components/  # HACS and custom integrations
-###| | ----- dashboards/         # Version-controlled YAML UI layouts
-###| | --------- configuration.yaml  # Main entry point
-###| | --------- secrets.yaml        # [GIT IGNORED] Sensitive credentials
-###|------- ma-config/              # Music Assistant persistent data
-###|------- docker-compose.yml      # Service orchestration
+.
+├── config/                 # Home Assistant core configuration
+│   ├── custom_components/  # HACS and custom integrations
+│   ├── dashboards/         # Version-controlled YAML UI layouts
+│   ├── configuration.yaml  # Main entry point
+│   └── secrets.yaml        # [GIT IGNORED] Sensitive credentials
+├── ma-config/              # Music Assistant persistent data
+└── docker-compose.yml      # Service orchestration
