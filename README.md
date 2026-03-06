@@ -48,10 +48,11 @@ mDNS & Discovery: Essential for discovering Google Cast and DLNA devices.
 
 Low Latency: Music Assistant requires direct network access to prevent jitter.
 
-## Security: Processes run as a non-root user (PUID/PGID: 1002).
+## Security 
+Processes run as a non-root user (PUID/PGID: 1002).
 
 ## Project Structure
-
+```
 .
 ├── config/                 # Home Assistant core configuration
 │   ├── custom_components/  # HACS and custom integrations
