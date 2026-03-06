@@ -3,6 +3,8 @@
 .env
 secrets.yaml
 .storage/
+.storagebk
+.storage*
 .cloud/
 
 # --- Home Assistant Internals ---
@@ -26,7 +28,7 @@ ma-config/data/*.db-wal
 ma-config/data/*.log
 ma-config/data/*.pem
 ma-config/data/settings.json.backup
-
+.ha_run.lock
 # --- Media & Temp Files ---
 config/tts/
 config/image/

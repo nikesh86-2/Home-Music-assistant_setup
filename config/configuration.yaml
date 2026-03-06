@@ -39,31 +39,16 @@ lovelace:
       show_in_sidebar: true
       filename: dashboards/dashboard-custom/main.yaml
 
-#browser_mod:
-# Load frontend themes from the themes folder
 frontend:
   themes: !include_dir_merge_named themes
-  #default_theme: "Google Home Soft"
-
-#zeroconf: 
-#  default_interface: true
-
-#logger:
-#  default: warning
-#  logs:
-#    aiohttp.access: critical
-#    homeassistant.components.http: warning
-#    homeassistant.components.websocket_api: error
 
 http:
   use_x_forwarded_for: true
   trusted_proxies:
     - 172.16.0.0/12  # Covers the entire Docker bridge network
-   # - 172.17.0.0/16
-   # - 172.20.0.0/16
-    - 192.168.0.249
+    - !secret trusted_proxy_1 # pulled from secrets.yaml
     - 127.0.0.1      # Localhost
-   # - ::1            # IPv6 Localhost
+   # - ::1            # IPv6 Localhost if enabled
   ip_ban_enabled: true
   login_attempts_threshold: 3
 
@@ -71,9 +56,7 @@ http:
 automation: !include automations.yaml
 script: !include scripts.yaml
 scene: !include scenes.yaml
-light: !include masterlights.yaml        # Create this file
-switch: !include switches.yaml      # Create this file
-template: !include templates.yaml  # Create this file
-
-# Keep the legacy groups for non-light/switch entities (like climate)
-group: !include groups.yaml        # Create this file
+light: !include masterlights.yaml 
+switch: !include switches.yaml    
+template: !include templates.yaml 
+group: !include groups.yaml      
