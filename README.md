@@ -17,7 +17,8 @@ The project is built around two primary containers managed by a central `docker-
 
 git clone [https://github.com/nikesh86-2/Home-Music-assistant_setup.git](https://github.com/nikesh86-2/Home-Music-assistant_setup.git)
 cd Home-Music-assistant_setup
-###2. Environment Configuration
+
+### 2. Environment Configuration
 System Variables: Copy .env.example to .env and update PUID, PGID.
 
 Secrets: Create config/secrets.yaml for sensitive credentials.
