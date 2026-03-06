@@ -1,3 +1,6 @@
+## 📸 Visuals & Dashboards
+View my custom Lovelace UI and Music Assistant setup in the [Screenshots Gallery](./docs/SCREENSHOTS.md).
+
 # - Home Automation & Infrastructure
 
 This repository contains my personal **Home Assistant** and **Music Assistant** configuration. It is managed via Docker Compose and follows an **Infrastructure-as-Code (IaC)** approach.
